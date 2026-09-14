@@ -253,9 +253,9 @@
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de mantenimiento y reparación de fibra óptica" tabindex="0">
             <div class="carousel-track">
-              <img class="carousel-slide is-active" src="img/repara.jpg" alt="Mantenimiento de red de fibra óptica" data-slide>
-              <img class="carousel-slide" src="img/ins.jpg" alt="Inspección de instalación de fibra óptica" data-slide>
-              <img class="carousel-slide" src="img/fusion.png" alt="Reparación de conexión de fibra óptica" data-slide>
+              <video class="carousel-slide is-active" src="fotos/cab12.mp4" type="video/mp4" muted playsinline autoplay loop data-slide></video>
+              <img class="carousel-slide" src="fotos/cab2.jpeg" alt="Inspección de instalación de fibra óptica" data-slide>
+              <img class="carousel-slide" src="fotos/cab1.jpeg" alt="Reparación de conexión de fibra óptica" data-slide>
             </div>
             <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
               <i data-lucide="chevron-left"></i>
@@ -270,9 +270,9 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Mantenimiento de Redes</span>
+            <span class="project-category">MANTENCIÓN DE ENLACES EN POSTACIÓN AÉREA</span>
             <h3>Diagnóstico y Reparación de Enlaces</h3>
-            <p>Descripción de ejemplo: diagnóstico de fallas y reparación de enlaces para asegurar la continuidad operativa.</p>
+            <p>Servicio especializado de mantenimiento preventivo y correctivo de enlaces de telecomunicaciones instalados en postación aérea, con el objetivo de asegurar la continuidad, estabilidad y correcto funcionamiento de la infraestructura de red.</p>
           </div>
         </div>
 
@@ -389,48 +389,80 @@
 
   <!-- Cargar iconos -->
   <script>
-    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    document.querySelectorAll('[data-carousel]').forEach((carousel, index) => {
       const slides = carousel.querySelectorAll('[data-slide]');
       const dots = carousel.querySelectorAll('[data-carousel-dot]');
+      const hasAutoplay = index === 0;
       let currentSlide = 0;
       let autoplay;
 
       const showSlide = (slideIndex) => {
         currentSlide = (slideIndex + slides.length) % slides.length;
-        slides.forEach((slide, index) => slide.classList.toggle('is-active', index === currentSlide));
-        dots.forEach((dot, index) => {
-          const isActive = index === currentSlide;
+        slides.forEach((slide, slideIndexValue) => {
+          const isActive = slideIndexValue === currentSlide;
+          slide.classList.toggle('is-active', isActive);
+
+          if (slide.tagName === 'VIDEO') {
+            if (isActive) {
+              slide.currentTime = 0;
+              slide.play().catch(() => {});
+            } else {
+              slide.pause();
+              slide.currentTime = 0;
+            }
+          }
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === currentSlide;
           dot.classList.toggle('is-active', isActive);
           dot.toggleAttribute('aria-current', isActive);
         });
       };
 
       const startAutoplay = () => {
+        if (!hasAutoplay) return;
         clearInterval(autoplay);
         autoplay = setInterval(() => showSlide(currentSlide + 1), 5000);
       };
 
+      const stopAutoplay = () => {
+        clearInterval(autoplay);
+      };
+
       carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => {
         showSlide(currentSlide - 1);
-        startAutoplay();
+        if (hasAutoplay) startAutoplay();
       });
       carousel.querySelector('[data-carousel-next]').addEventListener('click', () => {
         showSlide(currentSlide + 1);
-        startAutoplay();
+        if (hasAutoplay) startAutoplay();
       });
       dots.forEach((dot) => dot.addEventListener('click', () => {
         showSlide(Number(dot.dataset.carouselDot));
-        startAutoplay();
+        if (hasAutoplay) startAutoplay();
       }));
-      carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
-      carousel.addEventListener('mouseleave', startAutoplay);
+
+      if (hasAutoplay) {
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+      } else {
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(autoplay);
+          startAutoplay();
+        });
+        carousel.addEventListener('mouseleave', () => {
+          clearInterval(autoplay);
+        });
+      }
+
       carousel.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowLeft') showSlide(currentSlide - 1);
         if (event.key === 'ArrowRight') showSlide(currentSlide + 1);
-        startAutoplay();
+        if (hasAutoplay) startAutoplay();
       });
 
-      startAutoplay();
+      if (hasAutoplay) startAutoplay();
     });
 
     lucide.createIcons();
