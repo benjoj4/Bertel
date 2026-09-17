@@ -412,6 +412,7 @@ body {
 }
 
 .about-carousel {
+  --progress: 0%;
   position: relative;
   width: min(100%, 470px);
   aspect-ratio: 1 / 1;
@@ -420,6 +421,20 @@ body {
   background-color: #e2e8f0;
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
   border: 8px solid rgba(255, 255, 255, 0.7);
+}
+
+.about-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(#0f172a var(--progress), rgba(255, 255, 255, 0.18) 0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 5px));
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.08s linear;
+  opacity: 0.95;
 }
 
 .about-carousel-track,
