@@ -78,19 +78,40 @@
   </section>
 
   <!-- SOBRE NOSOTROS -->
-  <section id="nosotros" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Quiénes Somos</span>
+  <section id="nosotros" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <span class="section-subtitle">QUIÉNES SOMOS</span>
         <h2 class="section-title">Compromiso con la Calidad Técnica</h2>
-      </div>
-      <div class="about-content">
         <p>
           En <strong>Bertel</strong> nos especializamos en ofrecer soluciones integrales en redes de telecomunicaciones. Contamos con equipamiento de vanguardia y personal altamente capacitado para la ejecución de proyectos de tendido, empalme, fusión y certificación de fibra óptica.
         </p>
         <p>
           Nuestro enfoque se centra en la precisión de cada conexión, cumpliendo rigurosamente las normas internacionales de seguridad y estándares de la industria para asegurar un rendimiento óptimo de la red.
         </p>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-carousel" data-carousel aria-label="Imágenes de nuestra empresa" tabindex="0">
+          <div class="about-carousel-track">
+            <img class="about-carousel-slide is-active" src="fotos/a1.jpeg" alt="Instalación de fibra óptica" data-slide>
+            <img class="about-carousel-slide" src="fotos/foto2.jpeg" alt="Trabajo de empalme en fibra óptica" data-slide>
+            <img class="about-carousel-slide" src="fotos/foto1.jpeg" alt="Infraestructura de red de fibra óptica" data-slide>
+          </div>
+
+          <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carousel-dots" aria-label="Seleccionar imagen">
+          <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+          <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+          <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+        </div>
       </div>
     </div>
   </section>
