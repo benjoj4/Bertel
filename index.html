@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BERTEL</title>
-  <meta name="description" content="Especialistas en instalación, fusión, certificación y mantenimiento de redes de fibra óptica.">
+  <title>BERTEL | Instalación y Certificación de Fibra Óptica en Ñuble</title>
+  <meta name="description" content="Especialistas en instalación, fusión, certificación y mantenimiento de redes de fibra óptica en Chillán y la Región de Ñuble.">
+  <!-- TODO: agrega tu dominio real aquí, ej: <link rel="canonical" href="https://tu-dominio.cl/"> -->
+
+  <!-- Open Graph / vista previa al compartir (WhatsApp, redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BERTEL Telecomunicaciones">
+  <meta property="og:title" content="BERTEL | Instalación y Certificación de Fibra Óptica">
+  <meta property="og:description" content="Instalación, fusión, certificación y mantenimiento de redes de fibra óptica en Chillán y la Región de Ñuble.">
+  <meta property="og:image" content="img/logofull.png">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" type="image/png" href="img/logo.png">
   
   <!-- Fuentes Google: Montserrat para títulos e Inter para texto general -->
@@ -14,7 +25,7 @@
 
   
   <!-- Iconos Lucide (CDN) -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.454.0"></script>
 
   <!-- Hoja de Estilos CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -32,13 +43,17 @@
         </span>
       </a>
       
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="navMenu">
         <a href="#inicio" class="nav-link">Inicio</a>
         <a href="#nosotros" class="nav-link">Nosotros</a>
         <a href="#servicios" class="nav-link">Servicios</a>
         <a href="#proyectos" class="nav-link">Proyectos</a>
         <a href="#contacto" class="nav-link btn-header">Cotizar</a>
       </nav>
+
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </header>
 
@@ -59,20 +74,23 @@
     </div>
   </section>
 
-  <!-- SECCIÓN METRICAS / ESTADÍSTICAS -->
+  <!-- SECCIÓN DESTACADOS -->
   <section class="stats-section">
     <div class="container stats-container">
       <div class="stat-card">
-        <span class="stat-number">Fibra Óptica</span>
-        <span class="stat-label">Construcción</span>
+        <i data-lucide="cable" class="stat-icon"></i>
+        <span class="stat-label-main">Construcción de Redes</span>
+        <span class="stat-label">Fibra Óptica</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">Redes</span>
-        <span class="stat-label">Mantención</span>
+        <i data-lucide="shield-check" class="stat-icon"></i>
+        <span class="stat-label-main">Mantención Preventiva</span>
+        <span class="stat-label">y Correctiva</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">Conectividad</span>
-        <span class="stat-label">Soluciones</span>
+        <i data-lucide="zap" class="stat-icon"></i>
+        <span class="stat-label-main">Soluciones a Medida</span>
+        <span class="stat-label">Conectividad</span>
       </div>
     </div>
   </section>
@@ -187,6 +205,7 @@
         <!-- ===== CARRUSEL 1: FUSIÓN Y BANDEJAS ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de empalme y organización de bandejas" tabindex="0">
+            <span class="project-category">Fusión de Precisión</span>
             <div class="carousel-track">
               <img class="carousel-slide is-active" src="fotos/ban1.jpeg" alt="Empalme de fibra óptica en bandeja" data-slide>
               <img class="carousel-slide" src="fotos/band2.jpeg" alt="Organización de fibras ópticas en bandeja" data-slide>
@@ -205,7 +224,6 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Fusión de Precisión</span>
             <h3>Empalme y Organización de Bandejas</h3>
             <p>Trabajo de fusión limpia para centro de datos corporativo.</p>
           </div>
@@ -214,6 +232,7 @@
         <!-- ===== CARRUSEL 2: INFRAESTRUCTURA INDUSTRIAL ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de red de fibra óptica industrial" tabindex="0">
+            <span class="project-category">Armado y Conectorización</span>
             <div class="carousel-track">
               <img class="carousel-slide is-active" src="fotos/b1.jpeg" alt="Red de fibra óptica en infraestructura industrial" data-slide>
               <img class="carousel-slide" src="fotos/b2.jpeg" alt="Canalización de red de fibra óptica industrial" data-slide>
@@ -232,7 +251,6 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Armado y Conectorización</span>
             <h3>ODF de distribución óptica</h3>
             <p>instalación de panel de terminación y distribución de fibra óptica, incorporando conectores SC/APC, pigtails y bandeja de gestión de fibras, proporcionando una solución organizada y protegida para la interconexión y administración de enlaces ópticos.</p>
           </div>
@@ -241,6 +259,7 @@
         <!-- ===== CARRUSEL 3: RACKS Y CERTIFICACIÓN ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de cableado estructurado y certificación" tabindex="0">
+            <span class="project-category">Tendido Subterráneo y Fusión</span>
             <div class="carousel-track">
               <img class="carousel-slide is-active" src="fotos/a1.jpeg" alt="Cableado estructurado en rack de comunicaciones" data-slide>
               <img class="carousel-slide" src="fotos/a2.jpeg" alt="Conexiones de fibra óptica en rack" data-slide>
@@ -259,7 +278,6 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Tendido Subterráneo y Fusión</span>
             <h3>Red de Fibra Óptica Industrial</h3>
             <p>fusión de precisión y conectorización de fibra óptica en túneles e infraestructura subterránea.</p>
           </div>
@@ -268,6 +286,7 @@
         <!-- ===== CARRUSEL 4: MANTENIMIENTO ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de mantenimiento y reparación de fibra óptica" tabindex="0">
+            <span class="project-category">MANTENCIÓN DE ENLACES EN POSTACIÓN AÉREA</span>
             <div class="carousel-track">
               <video class="carousel-slide is-active" src="fotos/cab12.mp4" type="video/mp4" muted playsinline autoplay loop data-slide></video>
               <img class="carousel-slide" src="fotos/cab2.jpeg" alt="Inspección de instalación de fibra óptica" data-slide>
@@ -286,7 +305,6 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">MANTENCIÓN DE ENLACES EN POSTACIÓN AÉREA</span>
             <h3>Diagnóstico y Reparación de Enlaces</h3>
             <p>Servicio especializado de mantenimiento preventivo y correctivo de enlaces de telecomunicaciones instalados en postación aérea, con el objetivo de asegurar la continuidad, estabilidad y correcto funcionamiento de la infraestructura de red.</p>
           </div>
@@ -295,6 +313,7 @@
         <!-- ===== CARRUSEL 5: INSTALACIÓN EN TERRENO ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de instalación de fibra óptica" tabindex="0">
+            <span class="project-category">Instalación en Terreno</span>
             <div class="carousel-track">
               <img class="carousel-slide is-active" src="img/ins.jpg" alt="Instalación de fibra óptica en terreno" data-slide>
               <img class="carousel-slide" src="img/cableado.jpg" alt="Tendido de cableado de fibra óptica" data-slide>
@@ -313,15 +332,15 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Instalación en Terreno</span>
             <h3>Despliegue de Red de Fibra Óptica</h3>
-            <p>Descripción de ejemplo: instalación y organización de una nueva red de fibra óptica para instalaciones comerciales.</p>
+            <p>Instalación y organización de una nueva red de fibra óptica para instalaciones comerciales, incluyendo tendido y canalización del cableado.</p>
           </div>
         </div>
 
         <!-- ===== CARRUSEL 6: CERTIFICACIÓN Y VALIDACIÓN ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de certificación de enlaces ópticos" tabindex="0">
+            <span class="project-category">Certificación Óptica</span>
             <div class="carousel-track">
               <img class="carousel-slide is-active" src="img/fusion.png" alt="Medición y certificación de enlace óptico" data-slide>
               <img class="carousel-slide" src="fotos/band2.jpeg" alt="Organización de fibras antes de certificación" data-slide>
@@ -340,9 +359,8 @@
             </div>
           </div>
           <div class="project-info">
-            <span class="project-category">Certificación Óptica</span>
             <h3>Medición y Validación de Enlaces</h3>
-            <p>Descripción de ejemplo: medición de pérdidas y validación del rendimiento de enlaces ópticos instalados.</p>
+            <p>Medición de pérdidas mediante OTDR y Powermeter, con validación del rendimiento de enlaces ópticos instalados.</p>
           </div>
         </div>
       </div>
@@ -530,6 +548,31 @@
     });
 
     lucide.createIcons();
+
+    // MENÚ MÓVIL (HAMBURGUESA)
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+      const closeMenu = () => {
+        navMenu.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+
+      // Cerrar al hacer click en un link
+      navMenu.querySelectorAll('.nav-link').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+    }
   </script>
 </body>
 </html>
