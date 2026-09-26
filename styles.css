@@ -156,6 +156,58 @@ body {
   color: var(--primary);
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: calc(22px + env(safe-area-inset-right));
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2ad16a 0%, #1fae57 100%);
+  color: #ffffff;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35), 0 8px 16px rgba(15, 23, 42, 0.18);
+  z-index: 990;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  animation: whatsapp-pulse 2.4s ease-in-out infinite;
+}
+
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 211, 102, 0.2);
+  opacity: 0.7;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 18px 34px rgba(37, 211, 102, 0.4), 0 10px 20px rgba(15, 23, 42, 0.22);
+  filter: brightness(1.03);
+}
+
+.whatsapp-float i {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.5;
+}
+
+@keyframes whatsapp-pulse {
+  0%,
+  100% {
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35), 0 8px 16px rgba(15, 23, 42, 0.18);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45), 0 0 0 12px rgba(37, 211, 102, 0.08);
+  }
+}
+
 /* ==========================================
    HERO SECTION
    ========================================== */
@@ -355,6 +407,100 @@ body {
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* ==========================================
+   CLIENTES DESTACADOS
+   ========================================== */
+.clients-highlight {
+  background-color: #0b1120;
+  padding: 42px 0 46px;
+  border-bottom: 3px solid var(--primary);
+}
+
+.clients-highlight-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.clients-highlight .section-title {
+  color: #ffffff;
+  font-size: clamp(26px, 2.4vw, 34px);
+  margin: 0;
+}
+
+.clients-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 26px;
+  transition: transform 0.8s ease-in-out;
+}
+
+.client-highlight-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 220px;
+  height: 120px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(148, 163, 184, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  transition: transform 0.45s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-highlight-card.is-focused {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+
+.client-highlight-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+.client-highlight-card.is-focused:hover {
+  transform: scale(1.06) translateY(-4px);
+}
+
+.client-highlight-card img {
+  max-width: 170px;
+  max-height: 62px;
+  width: 100%;
+  object-fit: contain;
+  filter: brightness(1.08) contrast(1.04);
+}
+
+.client-highlight-card.is-focused img {
+  filter: brightness(1) contrast(1.02);
+}
+
+@media (max-width: 640px) {
+  .clients-highlight {
+    padding-top: 32px;
+    padding-bottom: 34px;
+  }
+
+  .client-highlight-card {
+    width: 170px;
+    height: 95px;
+  }
+
+  .clients-track {
+    gap: 18px;
+  }
 }
 
 /* ==========================================
@@ -846,6 +992,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    animation: none;
+    transition: none;
+  }
+
   .hero-title {
     animation: none;
     transition: none;
@@ -1237,6 +1388,19 @@ body {
 
 /* RESPONSIVO PARA MÓVILES */
 @media (max-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 16px;
+    bottom: 16px;
+    border-width: 2px;
+  }
+
+  .whatsapp-float i {
+    width: 24px;
+    height: 24px;
+  }
+
   .nav-toggle {
     display: block;
   }
