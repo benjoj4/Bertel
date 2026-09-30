@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detalles técnicos de los servicios BERTEL de telecomunicaciones y fibra óptica en Ñuble.">
+  <title>Servicio | BERTEL Telecomunicaciones</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.454.0"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="service-detail-page">
+  <a class="whatsapp-float" href="https://wa.me/56937376663" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <i data-lucide="message-circle" aria-hidden="true"></i>
+  </a>
+
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html#inicio" class="logo">
+        <span class="logo-image-slot" aria-label="Logo de BERTEL"></span>
+        <span class="logo-content">
+          <img class="logo-title-image" src="img/titulo.png" alt="BERTEL">
+          <span class="logo-sub">TELECOMUNICACIONES</span>
+        </span>
+      </a>
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <a href="index.html#inicio" class="nav-link">Inicio</a>
+        <a href="index.html#nosotros" class="nav-link">Nosotros</a>
+        <a href="index.html#servicios" class="nav-link">Servicios</a>
+        <a href="index.html#proyectos" class="nav-link">Proyectos</a>
+        <a href="index.html#contacto" class="nav-link btn-header">Cotizar</a>
+      </nav>
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="service-detail-hero" id="serviceHero">
+      <div class="container">
+        <a href="index.html#servicios" class="service-back-link"><span aria-hidden="true">←</span> Volver a Servicios</a>
+        <div class="hero-badge"><i data-lucide="zap"></i><span id="serviceBadge">Servicios especializados</span></div>
+        <h1 class="hero-title" id="serviceTitle"></h1>
+        <p class="hero-description" id="serviceSubtitle"></p>
+        <div class="service-detail-actions">
+          <a class="btn btn-primary" id="heroQuote" href="https://wa.me/56937376663" target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a>
+          <a class="btn btn-secondary" href="index.html#proyectos">Ver proyectos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-detail-content">
+      <div class="container service-detail-grid">
+        <article class="service-detail-copy">
+          <span class="section-subtitle">Alcance técnico</span>
+          <h2 class="section-title">Cómo trabajamos</h2>
+          <div id="serviceDescription"></div>
+          <ul class="service-benefits" id="serviceBenefits"></ul>
+        </article>
+        <aside class="service-spec-card" aria-labelledby="specTitle">
+          <h2 id="specTitle">Ficha técnica rápida</h2>
+          <dl class="service-spec-list" id="serviceSpecs"></dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="service-gallery-section">
+      <div class="container">
+        <span class="section-subtitle">En terreno</span>
+        <h2 class="section-title">Galería de trabajos</h2>
+        <div class="project-carousel service-gallery" data-service-carousel aria-label="Galería de trabajos del servicio" tabindex="0">
+          <div class="carousel-track" id="serviceGallery"></div>
+          <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-gallery-prev><i data-lucide="chevron-left"></i></button>
+          <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-gallery-next><i data-lucide="chevron-right"></i></button>
+          <div class="carousel-dots" id="serviceGalleryDots" aria-label="Seleccionar imagen"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-cta">
+      <div class="container service-cta-inner">
+        <div>
+          <span class="section-subtitle">Hablemos de tu proyecto</span>
+          <h2 id="serviceCtaTitle">Solicita una cotización técnica</h2>
+          <p>Cuéntanos el alcance, la ubicación y los plazos de tu proyecto. Te orientamos sobre la solución adecuada.</p>
+        </div>
+        <a class="btn btn-primary" id="bottomQuote" href="https://wa.me/56937376663" target="_blank" rel="noopener noreferrer">Cotizar este servicio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto" class="footer-section">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <img class="footer-logo" src="img/logofull.png" alt="BERTEL Fibra Óptica">
+        <p>Instalación y mantenimiento de redes de fibra óptica.</p>
+        <div class="contact-details">
+          <div class="contact-item"><i data-lucide="phone"></i><span>+56 9 3737 6663</span></div>
+          <div class="contact-item"><i data-lucide="mail"></i><span>berteltelecomunicaciones@gmail.com</span></div>
+          <div class="contact-item"><i data-lucide="map-pin"></i><span>Chillán, Chile</span></div>
+        </div>
+        <a class="btn btn-whatsapp" href="https://wa.me/56937376663" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle"></i>Contactar por WhatsApp</a>
+      </div>
+      <div class="footer-faq">
+        <span class="section-subtitle">Preguntas frecuentes</span>
+        <h3>Resolvemos tus dudas técnicas</h3>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>¿En qué zonas prestan servicio?</summary>
+            <p>Atendemos en Chillán, la Región de Ñuble y zonas aledañas para proyectos industriales y comerciales.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Realizan certificaciones de red?</summary>
+            <p>Sí, realizamos mediciones de enlaces y podemos entregar resultados e informes según el alcance acordado.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Atienden emergencias por cortes?</summary>
+            <p>Contáctanos para evaluar disponibilidad y coordinar el diagnóstico y reparación de enlaces.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div class="copyright"><div class="container"><p>&copy; 2026 BERTEL Fibra Óptica. Todos los derechos reservados.</p></div></div>
+  </footer>
+
+  <script>
+    const services = {
+      instalacion: {
+        title: 'Instalación de Fibra Óptica', badge: 'Construcción y despliegue de redes', image: 'img/ins.jpg',
+        subtitle: 'Diseño de ruta, tendido y terminación de enlaces ópticos para redes backbone, distribución e instalaciones interiores.',
+        description: [
+          'Ejecutamos tendidos de fibra óptica aéreos, subterráneos e interiores de acuerdo con las condiciones del trazado y los requerimientos de cada proyecto. El trabajo considera revisión de ruta, coordinación de accesos, selección del cable y preparación de los puntos de terminación.',
+          'Durante la instalación se respetan las especificaciones del fabricante para tensión de tracción y radio mínimo de curvatura. La selección de fibra considera la familia ITU-T G.652 o G.657 cuando lo indica el diseño. Las entradas a cámaras, bandejas y gabinetes se protegen y organizan; la terminación y las pruebas se definen según el estándar aplicable y el alcance acordado.'
+        ],
+        benefits: ['Tendido aéreo, canalizado e interior', 'Planificación y revisión de ruta', 'Protección y orden en puntos de distribución', 'Pruebas de continuidad según alcance'],
+        specs: [['Equipamiento', 'Herramientas de tendido, tracción y terminación'], ['Cables', 'Monomodo o multimodo, según diseño'], ['Conectores', 'SC, LC u otros definidos para el enlace'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
+        gallery: [['img/ins.jpg', 'Tendido de fibra óptica en terreno'], ['fotos/a1.jpeg', 'Instalación y organización de fibra óptica'], ['fotos/cab2.jpeg', 'Infraestructura aérea de telecomunicaciones']]
+      },
+      fusion: {
+        title: 'Fusión y Certificación', badge: 'Empalmes y medición óptica', image: 'img/fusion.png',
+        subtitle: 'Empalmes por fusión, organización de bandejas y mediciones para verificar el desempeño de enlaces de fibra óptica.',
+        description: [
+          'Preparamos las fibras mediante limpieza y corte de precisión antes de ejecutar empalmes por fusión. Los empalmes se protegen con mangas termocontraíbles y se organizan en bandejas respetando radios de curvatura, identificación y capacidad del cierre o repartidor óptico.',
+          'La verificación se realiza con los instrumentos apropiados al objetivo del enlace: inspección de continuidad y pérdidas con fuente de luz y medidor de potencia, y caracterización de eventos mediante OTDR cuando el alcance lo requiere. Los criterios de aceptación, las longitudes de onda y los métodos de prueba se acuerdan según diseño y norma aplicable, como las series IEC 61280 e ITU-T correspondientes.'
+        ],
+        benefits: ['Empalme por fusión de fibras', 'Orden e identificación de bandejas', 'Medición OTDR y/o Powermeter según alcance', 'Registro de resultados de las pruebas'],
+        specs: [['Equipamiento', 'Fusionadora, cleaver, OTDR y medidor de potencia según proyecto'], ['Fibra', 'Monomodo o multimodo según especificación'], ['Conectores', 'SC/APC, SC/UPC, LC u otros requeridos'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
+        gallery: [['img/fusion.png', 'Preparación y certificación de empalmes'], ['fotos/ban1.jpeg', 'Bandeja de empalme de fibra óptica'], ['fotos/band2.jpeg', 'Organización de fibras ópticas']]
+      },
+      mantenimiento: {
+        title: 'Mantenimiento y Reparación', badge: 'Continuidad y recuperación de enlaces', image: 'img/repara.jpg',
+        subtitle: 'Diagnóstico de fallas, reparación de cortes y mantenimiento preventivo para redes de fibra óptica.',
+        description: [
+          'El proceso comienza con el levantamiento de síntomas y antecedentes de la red para acotar el tramo afectado. Según la topología, se realizan inspecciones de ruta y mediciones ópticas, incluido OTDR cuando corresponde, con el fin de localizar pérdidas, cortes o eventos anómalos.',
+          'Con el punto de falla identificado, se coordina el acceso y la intervención, se repara o reemplaza el tramo dañado, se realizan las fusiones necesarias y se mide nuevamente el enlace. Las labores preventivas pueden incluir inspección visual, revisión de cierres y orden de reservas, dejando registro de los hallazgos y trabajos realizados.'
+        ],
+        benefits: ['Diagnóstico de cortes y degradación de señal', 'Reparación de cable y empalmes', 'Inspección preventiva de infraestructura', 'Pruebas posteriores a la intervención'],
+        specs: [['Equipamiento', 'OTDR, fusionadora y herramientas de inspección según falla'], ['Materiales', 'Cierres, bandejas, mangas y cable según necesidad'], ['Conectores', 'Según los componentes existentes en la red'], ['Plazo de respuesta', 'Se confirma al evaluar urgencia y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
+        gallery: [['img/repara.jpg', 'Mantenimiento de infraestructura de fibra'], ['fotos/cab2.jpeg', 'Inspección de red aérea'], ['fotos/cab1.jpeg', 'Revisión de conexiones de fibra óptica']]
+      },
+      cableado: {
+        title: 'Cableado Estructurado', badge: 'Ordenamiento de redes y racks', image: 'img/cableado.jpg',
+        subtitle: 'Instalación, organización y documentación de cableado en racks, gabinetes y puntos de distribución.',
+        description: [
+          'Implementamos y ordenamos cableado de telecomunicaciones en salas técnicas y espacios de trabajo. El alcance puede incluir canalizaciones, tendido, terminación en patch panels y rosetas, identificación de enlaces y peinado de racks para mantener accesibles los equipos y facilitar la operación.',
+          'La distribución separa y asegura los tendidos de acuerdo con el diseño y las buenas prácticas aplicables, cuidando radios de curvatura, alivio de tensión y etiquetado consistente. La instalación se especifica según ANSI/TIA-568 e ISO/IEC 11801 en la edición aplicable; las pruebas se definen según la categoría del cable y los requerimientos del proyecto.'
+        ],
+        benefits: ['Peinado y orden de racks y gabinetes', 'Canalización y terminación de puntos', 'Etiquetado e identificación de enlaces', 'Pruebas acordes a la categoría instalada'],
+        specs: [['Equipamiento', 'Herramientas de terminación y prueba según proyecto'], ['Cableado', 'Cobre categoría definida en el diseño y fibra óptica'], ['Conectores', 'RJ45, patch panels y conectores ópticos según red'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
+        gallery: [['img/cableado.jpg', 'Organización de cableado estructurado'], ['fotos/bannertrabajos.jpeg', 'Rack de comunicaciones'], ['fotos/a2.jpeg', 'Terminaciones y distribución de red']]
+      }
+    };
+
+    const serviceKey = new URLSearchParams(window.location.search).get('servicio') || 'instalacion';
+    const service = services[serviceKey] || services.instalacion;
+    const quoteUrl = `https://wa.me/56937376663?text=${encodeURIComponent(`Hola, quiero cotizar el servicio de ${service.title}.`)}`;
+
+    document.title = `${service.title} | BERTEL Telecomunicaciones`;
+    document.querySelector('meta[name="description"]').content = service.subtitle;
+    document.getElementById('serviceTitle').textContent = service.title;
+    document.getElementById('serviceBadge').textContent = service.badge;
+    document.getElementById('serviceSubtitle').textContent = service.subtitle;
+    document.getElementById('serviceCtaTitle').textContent = `Cotiza ${service.title.toLowerCase()}`;
+    document.getElementById('serviceHero').style.setProperty('--service-image', `url("${service.image}")`);
+    document.getElementById('heroQuote').href = quoteUrl;
+    document.getElementById('bottomQuote').href = quoteUrl;
+
+    document.getElementById('serviceDescription').innerHTML = service.description.map((paragraph) => `<p>${paragraph}</p>`).join('');
+    document.getElementById('serviceBenefits').innerHTML = service.benefits.map((benefit) => `<li><i data-lucide="check-check" aria-hidden="true"></i><span>${benefit}</span></li>`).join('');
+    document.getElementById('serviceSpecs').innerHTML = service.specs.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('');
+    document.getElementById('serviceGallery').innerHTML = service.gallery.map(([src, alt], index) => `<img class="carousel-slide${index === 0 ? ' is-active' : ''}" src="${src}" alt="${alt}" data-gallery-slide>`).join('');
+    document.getElementById('serviceGalleryDots').innerHTML = service.gallery.map((image, index) => `<button class="carousel-dot${index === 0 ? ' is-active' : ''}" type="button" aria-label="Ver imagen ${index + 1}"${index === 0 ? ' aria-current="true"' : ''} data-gallery-dot="${index}"></button>`).join('');
+
+    const gallery = document.querySelector('[data-service-carousel]');
+    const slides = [...gallery.querySelectorAll('[data-gallery-slide]')];
+    const dots = [...gallery.querySelectorAll('[data-gallery-dot]')];
+    let activeSlide = 0;
+    const showSlide = (index) => {
+      activeSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeSlide));
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === activeSlide;
+        dot.classList.toggle('is-active', active);
+        dot.toggleAttribute('aria-current', active);
+      });
+    };
+
+    gallery.querySelector('[data-gallery-prev]').addEventListener('click', () => showSlide(activeSlide - 1));
+    gallery.querySelector('[data-gallery-next]').addEventListener('click', () => showSlide(activeSlide + 1));
+    dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.galleryDot))));
+    gallery.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showSlide(activeSlide - 1);
+      if (event.key === 'ArrowRight') showSlide(activeSlide + 1);
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const setMenuOpen = (isOpen) => {
+      navMenu.classList.toggle('is-open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      navToggle.innerHTML = `<i data-lucide="${isOpen ? 'x' : 'menu'}"></i>`;
+      lucide.createIcons();
+    };
+    navToggle.addEventListener('click', () => setMenuOpen(navToggle.getAttribute('aria-expanded') !== 'true'));
+    navMenu.querySelectorAll('.nav-link').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
