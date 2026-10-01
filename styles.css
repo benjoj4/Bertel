@@ -1130,13 +1130,112 @@ body {
   margin-bottom: 26px;
 }
 
-.service-gallery {
-  height: clamp(240px, 48vw, 520px);
-  border-radius: 6px;
+.service-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 920px;
+  margin: 0 auto;
+  gap: 8px;
 }
 
-.service-gallery .carousel-slide {
+.service-gallery-item {
+  display: block;
+  padding: 0;
+  border: 0;
+  aspect-ratio: 1.45 / 1;
+  overflow: hidden;
   background: #dce3e8;
+  cursor: zoom-in;
+}
+
+.service-gallery-item img,
+.service-gallery-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.service-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.service-lightbox {
+  position: fixed;
+  inset: 0;
+  width: min(82vw, 820px);
+  max-width: calc(100vw - 32px);
+  height: fit-content;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 48px 0 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.service-lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.service-lightbox::backdrop {
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(3px);
+}
+
+.service-lightbox > img {
+  display: block;
+  max-width: 100%;
+  max-height: min(68dvh, 620px);
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.service-lightbox-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(15, 23, 42, 0.8);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.service-lightbox-close:hover,
+.service-lightbox-close:focus-visible {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .service-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .service-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-gallery-item img,
+  .service-gallery-item video {
+    transition: none;
+  }
+
+  .service-gallery-item:hover img {
+    transform: none;
+  }
 }
 
 .service-cta {

@@ -72,14 +72,16 @@
       <div class="container">
         <span class="section-subtitle">En terreno</span>
         <h2 class="section-title">Galería de trabajos</h2>
-        <div class="project-carousel service-gallery" data-service-carousel aria-label="Galería de trabajos del servicio" tabindex="0">
-          <div class="carousel-track" id="serviceGallery"></div>
-          <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-gallery-prev><i data-lucide="chevron-left"></i></button>
-          <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-gallery-next><i data-lucide="chevron-right"></i></button>
-          <div class="carousel-dots" id="serviceGalleryDots" aria-label="Seleccionar imagen"></div>
-        </div>
+        <div class="service-gallery-grid" id="serviceGallery" aria-label="Galería de trabajos del servicio"></div>
       </div>
     </section>
+
+    <dialog class="service-lightbox" id="serviceLightbox" aria-label="Imagen ampliada">
+      <button class="service-lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar imagen">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+      <img id="lightboxImage" alt="">
+    </dialog>
 
     <section class="service-cta">
       <div class="container service-cta-inner">
@@ -138,7 +140,7 @@
         ],
         benefits: ['Tendido aéreo, canalizado e interior', 'Planificación y revisión de ruta', 'Protección y orden en puntos de distribución', 'Pruebas de continuidad según alcance'],
         specs: [['Equipamiento', 'Herramientas de tendido, tracción y terminación'], ['Cables', 'Monomodo o multimodo, según diseño'], ['Conectores', 'SC, LC u otros definidos para el enlace'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/ins.jpg', 'Tendido de fibra óptica en terreno'], ['fotos/a1.jpeg', 'Instalación y organización de fibra óptica'], ['fotos/cab2.jpeg', 'Infraestructura aérea de telecomunicaciones']]
+        gallery: [['img/ins.jpg', 'Tendido de fibra óptica en terreno'], ['fotos/a1.jpeg', 'Instalación y organización de fibra óptica'], ['fotos/cab2.jpeg', 'Infraestructura aérea de telecomunicaciones'], ['fotos/b1.jpeg', 'Infraestructura de red de fibra óptica'], ['fotos/b2.jpeg', 'Canalización de fibra óptica'], ['fotos/b3.jpeg', 'Tendido de red en terreno'], ['fotos/cab1.jpeg', 'Instalación de fibra óptica en postación'], ['fotos/a2.jpeg', 'Terminaciones de fibra óptica'], ['fotos/a3.jpeg', 'Gabinete de telecomunicaciones']]
       },
       fusion: {
         title: 'Fusión y Certificación', badge: 'Empalmes y medición óptica', image: 'img/fusion.png',
@@ -149,7 +151,7 @@
         ],
         benefits: ['Empalme por fusión de fibras', 'Orden e identificación de bandejas', 'Medición OTDR y/o Powermeter según alcance', 'Registro de resultados de las pruebas'],
         specs: [['Equipamiento', 'Fusionadora, cleaver, OTDR y medidor de potencia según proyecto'], ['Fibra', 'Monomodo o multimodo según especificación'], ['Conectores', 'SC/APC, SC/UPC, LC u otros requeridos'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/fusion.png', 'Preparación y certificación de empalmes'], ['fotos/ban1.jpeg', 'Bandeja de empalme de fibra óptica'], ['fotos/band2.jpeg', 'Organización de fibras ópticas']]
+        gallery: [['img/fusion.png', 'Preparación y certificación de empalmes'], ['fotos/ban1.jpeg', 'Bandeja de empalme de fibra óptica'], ['fotos/band2.jpeg', 'Organización de fibras ópticas'], ['fotos/band3.jpg', 'Detalle de fusión de fibra óptica'], ['fotos/foto1.jpeg', 'Trabajo de fusión en terreno'], ['fotos/foto2.jpeg', 'Preparación de enlace óptico'], ['fotos/a1.jpeg', 'Organización de fibras en gabinete'], ['fotos/a2.jpeg', 'Terminaciones de fibra óptica'], ['fotos/a3.jpeg', 'Panel de distribución óptica']]
       },
       mantenimiento: {
         title: 'Mantenimiento y Reparación', badge: 'Continuidad y recuperación de enlaces', image: 'img/repara.jpg',
@@ -160,7 +162,7 @@
         ],
         benefits: ['Diagnóstico de cortes y degradación de señal', 'Reparación de cable y empalmes', 'Inspección preventiva de infraestructura', 'Pruebas posteriores a la intervención'],
         specs: [['Equipamiento', 'OTDR, fusionadora y herramientas de inspección según falla'], ['Materiales', 'Cierres, bandejas, mangas y cable según necesidad'], ['Conectores', 'Según los componentes existentes en la red'], ['Plazo de respuesta', 'Se confirma al evaluar urgencia y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/repara.jpg', 'Mantenimiento de infraestructura de fibra'], ['fotos/cab2.jpeg', 'Inspección de red aérea'], ['fotos/cab1.jpeg', 'Revisión de conexiones de fibra óptica']]
+        gallery: [['img/repara.jpg', 'Mantenimiento de infraestructura de fibra'], ['fotos/cab2.jpeg', 'Inspección de red aérea'], ['fotos/cab1.jpeg', 'Revisión de conexiones de fibra óptica'], ['fotos/cab12.mp4', 'Registro de trabajos de mantenimiento'], ['fotos/b1.jpeg', 'Infraestructura de red de fibra óptica'], ['fotos/b2.jpeg', 'Canalización de fibra óptica'], ['fotos/b3.jpeg', 'Revisión de infraestructura de red'], ['fotos/foto1.jpeg', 'Intervención de enlace óptico'], ['fotos/foto2.jpeg', 'Mantenimiento de conexiones ópticas']]
       },
       cableado: {
         title: 'Cableado Estructurado', badge: 'Ordenamiento de redes y racks', image: 'img/cableado.jpg',
@@ -171,7 +173,7 @@
         ],
         benefits: ['Peinado y orden de racks y gabinetes', 'Canalización y terminación de puntos', 'Etiquetado e identificación de enlaces', 'Pruebas acordes a la categoría instalada'],
         specs: [['Equipamiento', 'Herramientas de terminación y prueba según proyecto'], ['Cableado', 'Cobre categoría definida en el diseño y fibra óptica'], ['Conectores', 'RJ45, patch panels y conectores ópticos según red'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/cableado.jpg', 'Organización de cableado estructurado'], ['fotos/bannertrabajos.jpeg', 'Rack de comunicaciones'], ['fotos/a2.jpeg', 'Terminaciones y distribución de red']]
+        gallery: [['img/cableado.jpg', 'Organización de cableado estructurado'], ['fotos/bannertrabajos.jpeg', 'Rack de comunicaciones'], ['fotos/a2.jpeg', 'Terminaciones y distribución de red'], ['fotos/a1.jpeg', 'Instalación en gabinete de comunicaciones'], ['fotos/a3.jpeg', 'Interior de tablero y conexiones'], ['fotos/b1.jpeg', 'Infraestructura de comunicaciones'], ['fotos/b2.jpeg', 'Canalización de red'], ['fotos/b3.jpeg', 'Distribución de cableado'], ['fotos/foto1.jpeg', 'Trabajo de instalación de red'], ['fotos/foto2.jpeg', 'Terminaciones de telecomunicaciones']]
       }
     };
 
@@ -192,29 +194,25 @@
     document.getElementById('serviceDescription').innerHTML = service.description.map((paragraph) => `<p>${paragraph}</p>`).join('');
     document.getElementById('serviceBenefits').innerHTML = service.benefits.map((benefit) => `<li><i data-lucide="check-check" aria-hidden="true"></i><span>${benefit}</span></li>`).join('');
     document.getElementById('serviceSpecs').innerHTML = service.specs.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('');
-    document.getElementById('serviceGallery').innerHTML = service.gallery.map(([src, alt], index) => `<img class="carousel-slide${index === 0 ? ' is-active' : ''}" src="${src}" alt="${alt}" data-gallery-slide>`).join('');
-    document.getElementById('serviceGalleryDots').innerHTML = service.gallery.map((image, index) => `<button class="carousel-dot${index === 0 ? ' is-active' : ''}" type="button" aria-label="Ver imagen ${index + 1}"${index === 0 ? ' aria-current="true"' : ''} data-gallery-dot="${index}"></button>`).join('');
+    document.getElementById('serviceGallery').innerHTML = service.gallery.map(([src, alt]) => {
+      const media = src.endsWith('.mp4')
+        ? `<video src="${src}" controls muted playsinline preload="metadata" aria-label="${alt}"></video>`
+        : `<button class="service-gallery-item" type="button" aria-label="Ampliar imagen: ${alt}"><img src="${src}" alt="${alt}" loading="lazy"></button>`;
+      return src.endsWith('.mp4') ? `<figure class="service-gallery-item">${media}</figure>` : media;
+    }).join('');
 
-    const gallery = document.querySelector('[data-service-carousel]');
-    const slides = [...gallery.querySelectorAll('[data-gallery-slide]')];
-    const dots = [...gallery.querySelectorAll('[data-gallery-dot]')];
-    let activeSlide = 0;
-    const showSlide = (index) => {
-      activeSlide = (index + slides.length) % slides.length;
-      slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeSlide));
-      dots.forEach((dot, dotIndex) => {
-        const active = dotIndex === activeSlide;
-        dot.classList.toggle('is-active', active);
-        dot.toggleAttribute('aria-current', active);
+    const lightbox = document.getElementById('serviceLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    document.querySelectorAll('.service-gallery-item img').forEach((thumbnail) => {
+      thumbnail.closest('button').addEventListener('click', () => {
+        lightboxImage.src = thumbnail.src;
+        lightboxImage.alt = thumbnail.alt;
+        lightbox.showModal();
       });
-    };
-
-    gallery.querySelector('[data-gallery-prev]').addEventListener('click', () => showSlide(activeSlide - 1));
-    gallery.querySelector('[data-gallery-next]').addEventListener('click', () => showSlide(activeSlide + 1));
-    dots.forEach((dot) => dot.addEventListener('click', () => showSlide(Number(dot.dataset.galleryDot))));
-    gallery.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft') showSlide(activeSlide - 1);
-      if (event.key === 'ArrowRight') showSlide(activeSlide + 1);
+    });
+    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
     });
 
     const navToggle = document.getElementById('navToggle');
