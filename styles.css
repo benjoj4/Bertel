@@ -459,20 +459,9 @@ body {
   transition: transform 0.45s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.client-highlight-card.is-focused {
-  background: #ffffff;
-  border-color: rgba(15, 23, 42, 0.08);
-  transform: scale(1.06);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
-}
-
 .client-highlight-card:hover {
   transform: translateY(-4px);
   border-color: rgba(0, 229, 255, 0.4);
-}
-
-.client-highlight-card.is-focused:hover {
-  transform: scale(1.06) translateY(-4px);
 }
 
 .client-highlight-card img {
@@ -483,8 +472,9 @@ body {
   filter: brightness(1.08) contrast(1.04);
 }
 
-.client-highlight-card.is-focused img {
-  filter: brightness(1) contrast(1.02);
+.client-highlight-card[data-client="Wirex"] img {
+  max-width: 210px;
+  max-height: 80px;
 }
 
 @media (max-width: 640px) {

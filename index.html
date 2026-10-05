@@ -379,6 +379,7 @@
   <section class="clients-highlight">
     <div class="container">
       <div class="clients-highlight-header">
+        <span class="section-subtitle">Empresas que confían en nosotros</span>
         <h2 class="section-title">Clientes Destacados</h2>
       </div>
 
@@ -396,29 +397,8 @@
           <div class="client-highlight-card" data-client="Dunamis" aria-label="Cliente Dunamis">
             <img src="img/clientes/dunamislogo.png" alt="Dunamis" />
           </div>
-          <div class="client-highlight-card" data-client="Adolis" aria-label="Cliente Adolis">
-            <img src="img/clientes/logo-adolis.png" alt="Adolis" />
-          </div>
-          <div class="client-highlight-card" data-client="Veraelec" aria-label="Cliente Veraelec">
-            <img src="img/clientes/veraelec.png" alt="Veraelec" />
-          </div>
-          <div class="client-highlight-card" data-client="Inia" aria-label="Cliente Inia">
-            <img src="img/clientes/inia-logo.png" alt="Inia" />
-          </div>
-          <div class="client-highlight-card" data-client="Dunamis" aria-label="Cliente Dunamis">
-            <img src="img/clientes/dunamislogo.png" alt="Dunamis" />
-          </div>
-          <div class="client-highlight-card" data-client="Adolis" aria-label="Cliente Adolis">
-            <img src="img/clientes/logo-adolis.png" alt="Adolis" />
-          </div>
-          <div class="client-highlight-card" data-client="Veraelec" aria-label="Cliente Veraelec">
-            <img src="img/clientes/veraelec.png" alt="Veraelec" />
-          </div>
-          <div class="client-highlight-card" data-client="Inia" aria-label="Cliente Inia">
-            <img src="img/clientes/inia-logo.png" alt="Inia" />
-          </div>
-          <div class="client-highlight-card" data-client="Dunamis" aria-label="Cliente Dunamis">
-            <img src="img/clientes/dunamislogo.png" alt="Dunamis" />
+          <div class="client-highlight-card" data-client="Wirex" aria-label="Cliente Wirex">
+            <img src="img/clientes/wirex.png" alt="Wirex" />
           </div>
         </div>
       </div>
@@ -485,45 +465,22 @@
     const clientCards = [...document.querySelectorAll('.client-highlight-card')];
 
     if (clientTrack && clientCards.length) {
-      const marqueeViewport = clientTrack.parentElement;
-      const cards = [...clientCards];
-      const uniqueCount = 4;
-      const uniqueCards = cards.slice(0, uniqueCount);
+      const originalCards = [...clientCards];
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // Mide la distancia real entre el inicio de la 1ª tarjeta y el inicio de su
-      // repetición (5ª tarjeta), en vez de calcularla a mano con un gap fijo.
-      // Así el ciclo queda correcto sin importar el ancho/gap real en cada breakpoint.
-      const measureSetWidth = () => {
-        if (cards.length <= uniqueCount) {
-          return uniqueCards.reduce((sum, card) => sum + card.getBoundingClientRect().width, 0);
-        }
-        return cards[uniqueCount].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+      originalCards.forEach((card) => {
+        clientTrack.appendChild(card.cloneNode(true));
+      });
+
+      const setWidth = () => {
+        const cards = [...clientTrack.children].slice(0, originalCards.length);
+        const gap = parseFloat(getComputedStyle(clientTrack).gap || '0');
+        return cards.reduce((total, card) => total + card.getBoundingClientRect().width, 0) + gap * Math.max(0, cards.length - 1);
       };
 
-      let baseSetWidth = measureSetWidth();
+      let baseSetWidth = setWidth();
       let offset = 0;
       let lastTimestamp = 0;
-
-      const updateFocusedCard = () => {
-        const viewportCenter = marqueeViewport.getBoundingClientRect().left + marqueeViewport.clientWidth / 2;
-        let closestCard = cards[0];
-        let minDistance = Number.POSITIVE_INFINITY;
-
-        cards.forEach((card) => {
-          card.classList.remove('is-focused');
-          const rect = card.getBoundingClientRect();
-          const cardCenter = rect.left + rect.width / 2;
-          const distance = Math.abs(cardCenter - viewportCenter);
-
-          if (distance < minDistance) {
-            minDistance = distance;
-            closestCard = card;
-          }
-        });
-
-        closestCard.classList.add('is-focused');
-      };
 
       const tick = (timestamp) => {
         if (!lastTimestamp) lastTimestamp = timestamp;
@@ -534,18 +491,14 @@
 
         offset += speed;
         if (offset >= baseSetWidth) {
-          offset -= baseSetWidth;
+          offset = 0;
         }
 
         clientTrack.style.transform = `translateX(-${offset}px)`;
-        updateFocusedCard();
         requestAnimationFrame(tick);
       };
 
-      updateFocusedCard();
-
       if (prefersReducedMotion) {
-        // Sin animación automática: se deja la fila fija y solo se resalta al pasar el mouse (ver CSS).
         clientTrack.style.transform = 'translateX(0px)';
       } else {
         clientTrack.style.transition = 'transform 0.1s linear';
@@ -554,9 +507,8 @@
 
       window.addEventListener('resize', () => {
         offset = 0;
+        baseSetWidth = setWidth();
         clientTrack.style.transform = 'translateX(0px)';
-        baseSetWidth = measureSetWidth();
-        updateFocusedCard();
       });
     }
 
