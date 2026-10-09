@@ -459,6 +459,12 @@ body {
   transition: transform 0.45s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.client-highlight-card[data-client="Adolis"],
+.client-highlight-card[data-client="Veraelec"] {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
 .client-highlight-card:hover {
   transform: translateY(-4px);
   border-color: rgba(0, 229, 255, 0.4);
