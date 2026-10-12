@@ -190,12 +190,14 @@ body {
   filter: brightness(1.03);
 }
 
-.whatsapp-float i {
+.whatsapp-float svg {
   position: relative;
   z-index: 1;
   width: 28px;
   height: 28px;
-  stroke-width: 2.5;
+  display: block;
+  fill: currentColor;
+  color: #ffffff;
 }
 
 @keyframes whatsapp-pulse {
@@ -1639,6 +1641,14 @@ body {
   margin-top: 30px;
   background-color: #25d366;
   color: #062b16;
+}
+
+.btn-whatsapp svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+  color: #ffffff;
 }
 
 .btn-whatsapp:hover {
