@@ -74,7 +74,8 @@
       <div class="container">
         <span class="section-subtitle">En terreno</span>
         <h2 class="section-title">Galería de trabajos</h2>
-        <div class="service-gallery-grid" id="serviceGallery" aria-label="Galería de trabajos del servicio"></div>
+        <div class="service-gallery-grid" id="serviceGallery" aria-label="Galería de trabajos del servicio" aria-live="polite" aria-busy="true"></div>
+        <p id="serviceGalleryStatus" role="status">Cargando tarjetas...</p>
       </div>
     </section>
 
@@ -133,7 +134,7 @@
         </div>
       </div>
     </div>
-    <div class="copyright"><div class="container"><p>&copy; 2026 BERTEL Fibra Óptica. Todos los derechos reservados.</p></div></div>
+    <div class="copyright"><div class="container"><p>&copy; 2026 BERTEL Fibra Óptica. Todos los derechos reservados.</p><a class="admin-access-link" href="admin.html"><i data-lucide="lock-keyhole" aria-hidden="true"></i> Acceso Administración</a></div></div>
   </footer>
 
   <script>
@@ -147,7 +148,6 @@
         ],
         benefits: ['Tendido aéreo, canalizado e interior', 'Planificación y revisión de ruta', 'Protección y orden en puntos de distribución', 'Pruebas de continuidad según alcance'],
         specs: [['Equipamiento', 'Herramientas de tendido, tracción y terminación'], ['Cables', 'Monomodo o multimodo, según diseño'], ['Conectores', 'SC, LC u otros definidos para el enlace'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/ins.jpg', 'Tendido de fibra óptica en terreno'], ['fotos/a1.jpeg', 'Instalación y organización de fibra óptica'], ['fotos/cab2.jpeg', 'Infraestructura aérea de telecomunicaciones'], ['fotos/b1.jpeg', 'Infraestructura de red de fibra óptica'], ['fotos/b2.jpeg', 'Canalización de fibra óptica'], ['fotos/b3.jpeg', 'Tendido de red en terreno'], ['fotos/cab1.jpeg', 'Instalación de fibra óptica en postación'], ['fotos/a2.jpeg', 'Terminaciones de fibra óptica'], ['fotos/a3.jpeg', 'Gabinete de telecomunicaciones']]
       },
       fusion: {
         title: 'Fusión y Certificación', badge: 'Empalmes y medición óptica', image: 'img/fusion.png',
@@ -158,7 +158,6 @@
         ],
         benefits: ['Empalme por fusión de fibras', 'Orden e identificación de bandejas', 'Medición OTDR y/o Powermeter según alcance', 'Registro de resultados de las pruebas'],
         specs: [['Equipamiento', 'Fusionadora, cleaver, OTDR y medidor de potencia según proyecto'], ['Fibra', 'Monomodo o multimodo según especificación'], ['Conectores', 'SC/APC, SC/UPC, LC u otros requeridos'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/fusion.png', 'Preparación y certificación de empalmes'], ['fotos/ban1.jpeg', 'Bandeja de empalme de fibra óptica'], ['fotos/band2.jpeg', 'Organización de fibras ópticas'], ['fotos/band3.jpg', 'Detalle de fusión de fibra óptica'], ['fotos/foto1.jpeg', 'Trabajo de fusión en terreno'], ['fotos/foto2.jpeg', 'Preparación de enlace óptico'], ['fotos/a1.jpeg', 'Organización de fibras en gabinete'], ['fotos/a2.jpeg', 'Terminaciones de fibra óptica'], ['fotos/a3.jpeg', 'Panel de distribución óptica']]
       },
       mantenimiento: {
         title: 'Mantenimiento y Reparación', badge: 'Continuidad y recuperación de enlaces', image: 'img/repara.jpg',
@@ -169,7 +168,6 @@
         ],
         benefits: ['Diagnóstico de cortes y degradación de señal', 'Reparación de cable y empalmes', 'Inspección preventiva de infraestructura', 'Pruebas posteriores a la intervención'],
         specs: [['Equipamiento', 'OTDR, fusionadora y herramientas de inspección según falla'], ['Materiales', 'Cierres, bandejas, mangas y cable según necesidad'], ['Conectores', 'Según los componentes existentes en la red'], ['Plazo de respuesta', 'Se confirma al evaluar urgencia y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/repara.jpg', 'Mantenimiento de infraestructura de fibra'], ['fotos/cab2.jpeg', 'Inspección de red aérea'], ['fotos/cab1.jpeg', 'Revisión de conexiones de fibra óptica'], ['fotos/cab12.mp4', 'Registro de trabajos de mantenimiento'], ['fotos/b1.jpeg', 'Infraestructura de red de fibra óptica'], ['fotos/b2.jpeg', 'Canalización de fibra óptica'], ['fotos/b3.jpeg', 'Revisión de infraestructura de red'], ['fotos/foto1.jpeg', 'Intervención de enlace óptico'], ['fotos/foto2.jpeg', 'Mantenimiento de conexiones ópticas']]
       },
       cableado: {
         title: 'Cableado Estructurado', badge: 'Ordenamiento de redes y racks', image: 'img/cableado.jpg',
@@ -180,7 +178,6 @@
         ],
         benefits: ['Peinado y orden de racks y gabinetes', 'Canalización y terminación de puntos', 'Etiquetado e identificación de enlaces', 'Pruebas acordes a la categoría instalada'],
         specs: [['Equipamiento', 'Herramientas de terminación y prueba según proyecto'], ['Cableado', 'Cobre categoría definida en el diseño y fibra óptica'], ['Conectores', 'RJ45, patch panels y conectores ópticos según red'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
-        gallery: [['img/cableado.jpg', 'Organización de cableado estructurado'], ['fotos/bannertrabajos.jpeg', 'Rack de comunicaciones'], ['fotos/a2.jpeg', 'Terminaciones y distribución de red'], ['fotos/a1.jpeg', 'Instalación en gabinete de comunicaciones'], ['fotos/a3.jpeg', 'Interior de tablero y conexiones'], ['fotos/b1.jpeg', 'Infraestructura de comunicaciones'], ['fotos/b2.jpeg', 'Canalización de red'], ['fotos/b3.jpeg', 'Distribución de cableado'], ['fotos/foto1.jpeg', 'Trabajo de instalación de red'], ['fotos/foto2.jpeg', 'Terminaciones de telecomunicaciones']]
       },
       lauchado: {
         title: 'Lauchado de Ductos', badge: 'Tendido subterráneo y preparación de ruta', image: 'fotos/lauchado1.jpeg',
@@ -191,12 +188,12 @@
         ],
         benefits: ['Instalación de ductos para redes subterráneas', 'Preparación de registros y trazado', 'Protección y orden de la ruta', 'Base para tendido posterior de fibra óptica'],
         specs: [['Equipamiento', 'Herramientas de excavación, trazado y preparación de ductos'], ['Materiales', 'Ductos, registros, accesorios y protección de línea'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas'], ['Plazo de respuesta', 'Coordinado según proyecto y condiciones del terreno'], ['Aplicación', 'Instalaciones subterráneas, redes de telecomunicaciones y obras civiles']],
-        gallery: [['fotos/lauchadovideo.mp4', 'Video de lanzamiento de ductos'], ['fotos/lauchado1.jpeg', 'Tendido de ductos en terreno'], ['fotos/lauchado2.jpeg', 'Registro y acceso para la instalación'], ['fotos/lauchado3.jpeg', 'Detalle de ducto y recorrido en obra'], ['fotos/lauchado4.jpeg', 'Preparación y conexión del ducto en registro']]
       }
     };
 
-    const serviceKey = new URLSearchParams(window.location.search).get('servicio') || 'instalacion';
-    const service = services[serviceKey] || services.instalacion;
+    const requestedServiceKey = new URLSearchParams(window.location.search).get('servicio');
+    const serviceKey = Object.hasOwn(services, requestedServiceKey) ? requestedServiceKey : 'instalacion';
+    const service = services[serviceKey];
     const quoteUrl = `https://wa.me/56937376663?text=${encodeURIComponent(`Hola, quiero cotizar el servicio de ${service.title}.`)}`;
 
     document.title = `${service.title} | BERTEL Telecomunicaciones`;
@@ -212,26 +209,111 @@
     document.getElementById('serviceDescription').innerHTML = service.description.map((paragraph) => `<p>${paragraph}</p>`).join('');
     document.getElementById('serviceBenefits').innerHTML = service.benefits.map((benefit) => `<li><i data-lucide="check-check" aria-hidden="true"></i><span>${benefit}</span></li>`).join('');
     document.getElementById('serviceSpecs').innerHTML = service.specs.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('');
-    document.getElementById('serviceGallery').innerHTML = service.gallery.map(([src, alt]) => {
-      const media = src.endsWith('.mp4')
-        ? `<video src="${src}" controls muted playsinline preload="metadata" aria-label="${alt}"></video>`
-        : `<button class="service-gallery-item" type="button" aria-label="Ampliar imagen: ${alt}"><img src="${src}" alt="${alt}" loading="lazy"></button>`;
-      return src.endsWith('.mp4') ? `<figure class="service-gallery-item">${media}</figure>` : media;
-    }).join('');
-
     const lightbox = document.getElementById('serviceLightbox');
     const lightboxImage = document.getElementById('lightboxImage');
-    document.querySelectorAll('.service-gallery-item img').forEach((thumbnail) => {
-      thumbnail.closest('button').addEventListener('click', () => {
-        lightboxImage.src = thumbnail.src;
-        lightboxImage.alt = thumbnail.alt;
-        lightbox.showModal();
-      });
+    const serviceGallery = document.getElementById('serviceGallery');
+    const galleryStatus = document.getElementById('serviceGalleryStatus');
+    serviceGallery.addEventListener('click', (event) => {
+      const thumbnail = event.target.closest('.service-gallery-item img');
+      if (!thumbnail) return;
+      lightboxImage.src = thumbnail.currentSrc || thumbnail.src;
+      lightboxImage.alt = thumbnail.alt;
+      lightbox.showModal();
     });
     document.getElementById('lightboxClose').addEventListener('click', () => lightbox.close());
     lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) lightbox.close();
     });
+
+    const SUPABASE_URL = 'https://qwrhihpltwkcargfifis.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_VJQdUrQbPFEyTnsWXKoTIA_RVpcSS35';
+    const getCardValue = (card, names) => {
+      for (const name of names) {
+        const value = card[name];
+        if (typeof value === 'string' && value.trim()) return value.trim();
+      }
+      return '';
+    };
+    const safeMediaUrl = (value) => {
+      try {
+        const mediaPath = String(value || '').trim();
+        if (!mediaPath) return '';
+        const url = new URL(mediaPath, window.location.href);
+        const isRelativePath = !/^[a-z][a-z\d+.-]*:/i.test(mediaPath) && !mediaPath.startsWith('//');
+        if (isRelativePath) return url.href;
+        return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : '';
+      } catch {
+        return '';
+      }
+    };
+    const renderServiceCard = (card) => {
+      const mediaValue = getCardValue(card, ['imagen_url', 'image_url', 'url_imagen', 'imagen', 'foto', 'video_url', 'url', 'src']);
+      const mediaUrl = safeMediaUrl(mediaValue);
+      if (!mediaUrl) return null;
+
+      const label = getCardValue(card, ['titulo', 'title', 'nombre', 'alt', 'descripcion', 'description']) || `Trabajo de ${service.title}`;
+      const mediaType = getCardValue(card, ['tipo', 'type', 'mime_type']).toLowerCase();
+      const isVideo = mediaType.startsWith('video') || /\.(mp4|webm|ogg)(?:$|[?#])/i.test(mediaUrl);
+
+      if (isVideo) {
+        const figure = document.createElement('figure');
+        figure.className = 'service-gallery-item';
+        const video = document.createElement('video');
+        video.src = mediaUrl;
+        video.controls = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        video.setAttribute('aria-label', label);
+        figure.append(video);
+        return figure;
+      }
+
+      const button = document.createElement('button');
+      button.className = 'service-gallery-item';
+      button.type = 'button';
+      button.setAttribute('aria-label', `Ampliar imagen: ${label}`);
+      const image = document.createElement('img');
+      image.src = mediaUrl;
+      image.alt = label;
+      image.loading = 'lazy';
+      button.append(image);
+      return button;
+    };
+    const loadServiceCards = async () => {
+      const endpoint = new URL(`${SUPABASE_URL}/rest/v1/tarjetas`);
+      endpoint.searchParams.set('select', '*');
+      endpoint.searchParams.set('categoria', `eq.${serviceKey}`);
+      endpoint.searchParams.set('order', 'id.asc');
+
+      try {
+        const response = await fetch(endpoint, {
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`
+          }
+        });
+        if (!response.ok) {
+          const details = await response.text();
+          throw new Error(`Supabase respondió ${response.status}: ${details}`);
+        }
+
+        const cards = await response.json();
+        if (!Array.isArray(cards)) throw new Error('La respuesta de Supabase no contiene una lista de tarjetas.');
+
+        const renderedCards = cards.map(renderServiceCard).filter(Boolean);
+        serviceGallery.replaceChildren(...renderedCards);
+        galleryStatus.textContent = renderedCards.length
+          ? ''
+          : 'No hay tarjetas disponibles para este servicio.';
+      } catch (error) {
+        console.error('No se pudieron cargar las tarjetas del servicio desde Supabase.', error);
+        galleryStatus.textContent = 'No fue posible cargar las tarjetas. Intenta nuevamente más tarde.';
+      } finally {
+        serviceGallery.setAttribute('aria-busy', 'false');
+      }
+    };
+    loadServiceCards();
 
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');

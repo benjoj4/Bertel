@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Administrador | BERTEL Telecomunicaciones</title>
+  <meta name="description" content="Acceso privado al modo administrador de Bertel Telecomunicaciones.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/png" href="img/logo.png">
+  
+  <!-- Fuentes Google: Montserrat para títulos e Inter para texto general -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  
+  <!-- Iconos Lucide (CDN) -->
+  <script src="https://unpkg.com/lucide@0.454.0"></script>
+
+  <!-- Hoja de Estilos CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <section class="admin-login-overlay" id="adminLoginPanel" aria-labelledby="adminLoginTitle">
+    <form class="admin-login-card" id="adminLoginForm">
+      <a href="index.html#inicio" class="logo admin-login-logo" aria-label="BERTEL, volver al sitio">
+        <span class="logo-image-slot" aria-hidden="true"></span>
+        <span class="logo-content">
+          <img class="logo-title-image" src="img/titulo.png" alt="BERTEL">
+          <span class="logo-sub">TELECOMUNICACIONES</span>
+        </span>
+      </a>
+      <span class="section-subtitle">Acceso privado</span>
+      <h1 id="adminLoginTitle">Modo Administrador</h1>
+      <p class="admin-login-description">Inicia sesión con una cuenta autorizada para gestionar el contenido de Bertel.</p>
+      <p class="admin-notice" id="adminNotice" role="status" aria-live="polite">Ingresa tus credenciales de administración.</p>
+      <div class="admin-form-grid">
+        <div class="admin-field admin-field-full">
+          <label for="adminEmail">Correo electrónico</label>
+          <input id="adminEmail" name="email" type="email" autocomplete="username" required>
+        </div>
+        <div class="admin-field admin-field-full">
+          <label for="adminPassword">Contraseña</label>
+          <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+        </div>
+      </div>
+      <div class="admin-form-actions">
+        <button class="admin-button" id="adminLoginButton" type="submit">
+          <i data-lucide="lock-keyhole" aria-hidden="true"></i> Iniciar sesión
+        </button>
+        <a class="admin-button admin-button-secondary" href="index.html#inicio">Volver al sitio</a>
+      </div>
+    </form>
+  </section>
+
+  <div id="adminSite" hidden>
+  <div class="admin-mode-bar" id="adminModeBar">
+    <div class="container admin-mode-bar-inner">
+      <span><i data-lucide="shield-check" aria-hidden="true"></i> Modo Administración Activo</span>
+      <button class="admin-button admin-button-secondary" id="adminSignOut" type="button">
+        <i data-lucide="log-out" aria-hidden="true"></i> Cerrar Sesión
+      </button>
+    </div>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/56937376663?text=Hola%2C%20quiero%20consultar%20por%20sus%20servicios%20de%20fibra%20%C3%B3ptica." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.72 0 .6 5.12.6 11.46c0 2.02.53 3.99 1.54 5.72L.5 24l6.98-1.83a11.46 11.46 0 0 0 4.58 1.03h.01c6.33 0 11.46-5.12 11.46-11.46 0-3.06-1.19-5.94-3.33-8.1Zm-8.46 17.63h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-4.15 1.09 1.11-4.05-.22-.41A9.41 9.41 0 0 1 2.61 11.46a9.46 9.46 0 0 1 18.92 0c0 5.2-4.23 9.43-9.46 9.43Zm5.18-7.06c-.28-.14-1.66-.82-1.91-.91-.25-.1-.43-.14-.61.14-.18.28-.7.91-.86 1.1-.16.19-.32.22-.6.08-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.91-.16-.28-.02-.43.12-.57.12-.13.28-.32.42-.48.14-.16.19-.28.28-.47.1-.19.05-.36-.02-.5-.08-.14-.6-1.45-.82-1.98-.22-.52-.43-.45-.6-.46h-.52c-.18 0-.47.07-.72.36-.25.28-1 .98-1 2.38s1.02 2.76 1.16 2.95c.14.19 2 3.14 4.83 4.4.68.29 1.21.46 1.63.59.68.22 1.29.19 1.77.11.54-.08 1.66-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.06-.12-.21-.18-.49-.32Z"/>
+    </svg>
+  </a>
+
+  <!-- ENCABEZADO / NAVEGACIÓN -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        <span class="logo-image-slot" aria-label="Logo de BERTEL"></span>
+        <span class="logo-content">
+          <img class="logo-title-image" src="img/titulo.png" alt="BERTEL">
+          <span class="logo-sub">TELECOMUNICACIONES</span>
+        </span>
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#proyectos" class="nav-link">Proyectos</a>
+        <a href="#contacto" class="nav-link btn-header">Cotizar</a>
+      </nav>
+
+      <button class="nav-toggle" type="button" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL / HERO -->
+  <section id="inicio" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <i data-lucide="zap"></i> Infraestructura de Alta Velocidad
+      </div>
+      <h1 class="hero-title">Conectividad y Redes de <span class="highlight">Fibra Óptica</span></h1>
+      <p class="hero-description">
+        Instalación, fusión de precisión y mantenimiento de redes de fibra óptica. Garantizamos alta estabilidad y continuidad operativa para empresas e infraestructura.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+        <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DESTACADOS -->
+  <section class="stats-section">
+    <div class="container stats-container">
+      <div class="stat-card">
+        <i data-lucide="cable" class="stat-icon"></i>
+        <span class="stat-label-main">Construcción de Redes</span>
+        <span class="stat-label">Fibra Óptica</span>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="shield-check" class="stat-icon"></i>
+        <span class="stat-label-main">Mantención Preventiva</span>
+        <span class="stat-label">y Correctiva</span>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="zap" class="stat-icon"></i>
+        <span class="stat-label-main">Soluciones a Medida</span>
+        <span class="stat-label">Conectividad</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <span class="section-subtitle">QUIÉNES SOMOS</span>
+        <h2 class="section-title">Compromiso con la Calidad Técnica</h2>
+        <p>
+          En <strong>Bertel</strong> nos especializamos en ofrecer soluciones integrales en redes de telecomunicaciones. Contamos con equipamiento de vanguardia y personal altamente capacitado para la ejecución de proyectos de tendido, empalme, fusión y certificación de fibra óptica.
+        </p>
+        <p>
+          Nuestro enfoque se centra en la precisión de cada conexión, cumpliendo rigurosamente las normas internacionales de seguridad y estándares de la industria para asegurar un rendimiento óptimo de la red.
+        </p>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-carousel" data-carousel aria-label="Imágenes de nuestra empresa" tabindex="0">
+          <div class="about-carousel-track">
+            <video class="about-carousel-slide is-active" src="fotos/cab12.mp4" type="video/mp4" muted playsinline autoplay loop data-slide></video>
+            <img class="about-carousel-slide" src="fotos/a1.jpeg" alt="Instalación de fibra óptica" data-slide>
+            <img class="about-carousel-slide" src="fotos/foto2.jpeg" alt="Trabajo de empalme en fibra óptica" data-slide>
+            <img class="about-carousel-slide" src="fotos/foto1.jpeg" alt="Infraestructura de red de fibra óptica" data-slide>
+          </div>
+        </div>
+
+        <div class="carousel-dots" aria-label="Seleccionar imagen">
+          <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+          <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+          <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+          <button class="carousel-dot" type="button" aria-label="Ver imagen 4" data-carousel-dot="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section bg-alt">
+    <div class="container">
+      <div class="services-banner">
+        <img src="img/ins.jpg" alt="Infraestructura de conexiones de fibra óptica">
+        <div class="services-banner-content">
+          <span class="section-subtitle">Lo que hacemos</span>
+          <h2 class="section-title">Servicios Especializados</h2>
+          <p>Soluciones técnicas para redes de fibra óptica estables y eficientes.</p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <a class="service-card" href="servicio-detalle.html?servicio=instalacion" aria-label="Ver Instalación de Fibra Óptica">
+          <div class="service-image">
+            <img src="img/ins.jpg" alt="Instalación de conexiones de fibra óptica">
+          </div>
+          <div class="service-card-content">
+            <div class="service-icon"><i data-lucide="cable"></i></div>
+            <h3>Instalación de Fibra Óptica</h3>
+            <p>Tendido aéreo, subterráneo e interior. Despliegue de redes backbone y distribución con máxima eficiencia técnica.</p>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="service-card" href="servicio-detalle.html?servicio=fusion" aria-label="Ver Fusión y Certificación">
+          <div class="service-image">
+            <img src="img/fusion.png" alt="Organización de fibras ópticas para certificación">
+          </div>
+          <div class="service-card-content">
+            <div class="service-icon"><i data-lucide="activity"></i></div>
+            <h3>Fusión y Certificación</h3>
+            <p>Empalmes por fusión de alta precisión y medición OTDR / Powermeter para garantizar la mínima atenuación.</p>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="service-card" href="servicio-detalle.html?servicio=mantenimiento" aria-label="Ver Mantenimiento y Reparación">
+          <div class="service-image">
+            <img src="img/repara.jpg" alt="Bandeja de fibra óptica en mantenimiento técnico">
+          </div>
+          <div class="service-card-content">
+            <div class="service-icon"><i data-lucide="shield-check"></i></div>
+            <h3>Mantenimiento y Reparación</h3>
+            <p>Diagnóstico rápido de fallas, reparación de cortes de fibra y planes de mantenimiento preventivo y correctivo.</p>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="service-card" href="servicio-detalle.html?servicio=cableado" aria-label="Ver Cableado Estructurado">
+          <div class="service-image">
+            <img src="img/cableado.jpg" alt="Organización de cableado de fibra óptica">
+          </div>
+          <div class="service-card-content">
+            <div class="service-icon"><i data-lucide="server"></i></div>
+            <h3>Cableado Estructurado</h3>
+            <p>Organización, peinado y canalización de Racks, gabinetes de comunicación y patch panels.</p>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="service-card" href="servicio-detalle.html?servicio=lauchado" aria-label="Ver Lauchado de Ductos">
+          <div class="service-image">
+            <img src="fotos/lauchado1.jpeg" alt="Tendido y lanzamiento de ductos para fibra óptica">
+          </div>
+          <div class="service-card-content">
+            <div class="service-icon"><i data-lucide="route"></i></div>
+            <h3>Lauchado de Ductos</h3>
+            <p>Instalación y recorrido de ductos para redes subterráneas, cajas de registro y preparación de trazado.</p>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS / TRABAJOS REALIZADOS -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <div class="projects-banner">
+        <img src="fotos/bannertrabajos.jpeg" alt="Cableado estructurado en rack de comunicaciones">
+        <div class="projects-banner-content">
+          <span class="section-subtitle">Portafolio</span>
+          <h2 class="section-title">Trabajos Realizados</h2>
+          <p>Experiencia técnica aplicada a proyectos de conectividad y fibra óptica.</p>
+        </div>
+      </div>
+
+      <p class="projects-status" id="projectsStatus" role="status" aria-live="polite" hidden></p>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- ===== CARRUSEL 1: FUSIÓN Y BANDEJAS ===== -->
+        <div class="project-card">
+          <div class="project-carousel" data-carousel aria-label="Imágenes de empalme y organización de bandejas" tabindex="0">
+            <span class="project-category">Fusión de Precisión</span>
+            <div class="carousel-track">
+              <img class="carousel-slide is-active" src="fotos/ban1.jpeg" alt="Empalme de fibra óptica en bandeja" data-slide>
+              <img class="carousel-slide" src="fotos/band2.jpeg" alt="Organización de fibras ópticas en bandeja" data-slide>
+              <img class="carousel-slide" src="fotos/band3.jpg" alt="Detalle de fusión de fibra óptica" data-slide>
+            </div>
+            <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="carousel-dots" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Empalme y Organización de Bandejas</h3>
+            <p>Trabajo de fusión limpia para centro de datos corporativo.</p>
+          </div>
+        </div>
+
+        <!-- ===== CARRUSEL 2: INFRAESTRUCTURA INDUSTRIAL ===== -->
+        <div class="project-card">
+          <div class="project-carousel" data-carousel aria-label="Imágenes de red de fibra óptica industrial" tabindex="0">
+            <span class="project-category">Armado y Conectorización</span>
+            <div class="carousel-track">
+              <img class="carousel-slide is-active" src="fotos/b1.jpeg" alt="Red de fibra óptica en infraestructura industrial" data-slide>
+              <img class="carousel-slide" src="fotos/b2.jpeg" alt="Canalización de red de fibra óptica industrial" data-slide>
+              <img class="carousel-slide" src="fotos/b3.jpeg" alt="Revisión de red de fibra óptica industrial" data-slide>
+            </div>
+            <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="carousel-dots" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>ODF de distribución óptica</h3>
+            <p>instalación de panel de terminación y distribución de fibra óptica, incorporando conectores SC/APC, pigtails y bandeja de gestión de fibras, proporcionando una solución organizada y protegida para la interconexión y administración de enlaces ópticos.</p>
+          </div>
+        </div>
+
+        <!-- ===== CARRUSEL 3: RACKS Y CERTIFICACIÓN ===== -->
+        <div class="project-card">
+          <div class="project-carousel" data-carousel aria-label="Imágenes de cableado estructurado y certificación" tabindex="0">
+            <span class="project-category">Tendido Subterráneo y Fusión</span>
+            <div class="carousel-track">
+              <img class="carousel-slide is-active" src="fotos/a1.jpeg" alt="Cableado estructurado en rack de comunicaciones" data-slide>
+              <img class="carousel-slide" src="fotos/a2.jpeg" alt="Conexiones de fibra óptica en rack" data-slide>
+              <img class="carousel-slide" src="fotos/a3.jpeg" alt="Revisión de cableado estructurado" data-slide>
+            </div>
+            <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="carousel-dots" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Red de Fibra Óptica Industrial</h3>
+            <p>fusión de precisión y conectorización de fibra óptica en túneles e infraestructura subterránea.</p>
+          </div>
+        </div>
+
+        <!-- ===== CARRUSEL 4: MANTENIMIENTO ===== -->
+        <div class="project-card">
+          <div class="project-carousel" data-carousel aria-label="Imágenes de mantenimiento y reparación de fibra óptica" tabindex="0">
+            <span class="project-category">MANTENCIÓN DE ENLACES EN POSTACIÓN AÉREA</span>
+            <div class="carousel-track">
+              <video class="carousel-slide is-active" src="fotos/cab12.mp4" type="video/mp4" muted playsinline autoplay loop data-slide></video>
+              <img class="carousel-slide" src="fotos/cab2.jpeg" alt="Inspección de instalación de fibra óptica" data-slide>
+              <img class="carousel-slide" src="fotos/cab1.jpeg" alt="Reparación de conexión de fibra óptica" data-slide>
+            </div>
+            <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="carousel-dots" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Diagnóstico y Reparación de Enlaces</h3>
+            <p>Servicio especializado de mantenimiento preventivo y correctivo de enlaces de telecomunicaciones instalados en postación aérea, con el objetivo de asegurar la continuidad, estabilidad y correcto funcionamiento de la infraestructura de red.</p>
+          </div>
+        </div>
+
+        <!-- ===== CARRUSEL 5: LANZADO Y TENDIDO SUBTERRÁNEO ===== -->
+        <div class="project-card">
+          <div class="project-carousel" data-carousel aria-label="Video e imágenes de tendido subterráneo de fibra óptica" tabindex="0">
+            <span class="project-category">Lauchado de ductos</span>
+            <div class="carousel-track">
+              <video class="carousel-slide is-active" src="fotos/lauchadovideo.mp4" type="video/mp4" muted playsinline autoplay loop data-slide></video>
+              <img class="carousel-slide" src="fotos/lauchado1.jpeg" alt="Tendido subterráneo de fibra óptica" data-slide>
+              <img class="carousel-slide" src="fotos/lauchado2.jpeg" alt="Caja de registro y acceso para fibra óptica" data-slide>
+              <img class="carousel-slide" src="fotos/lauchado3.jpeg" alt="Registro de acceso con cableado en instalación" data-slide>
+              <img class="carousel-slide" src="fotos/lauchado4.jpeg" alt="Detalle de ingreso de fibra en registro y pasos" data-slide>
+            </div>
+            <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="carousel-dots" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 4" data-carousel-dot="3"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 5" data-carousel-dot="4"></button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Lauchado de Ductos subterráneos</h3>
+            <p>Trabajo de sondeado y lauchado en canalizaciones subterráneas para la verificación de rutas y posterior tendido de redes de telecomunicaciones.</p>
+          </div>
+        </div>
+
+        <!-- ===== CARRUSEL 6: CERTIFICACIÓN Y VALIDACIÓN ===== -->
+        <div class="project-card">
+          <div class="project-carousel" data-carousel aria-label="Imágenes de certificación de enlaces ópticos" tabindex="0">
+            <span class="project-category">Certificación Óptica</span>
+            <div class="carousel-track">
+              <img class="carousel-slide is-active" src="img/fusion.png" alt="Medición y certificación de enlace óptico" data-slide>
+              <img class="carousel-slide" src="fotos/band2.jpeg" alt="Organización de fibras antes de certificación" data-slide>
+              <img class="carousel-slide" src="img/cableado.jpg" alt="Panel de conexiones para certificación" data-slide>
+            </div>
+            <button class="carousel-button carousel-button-prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-button carousel-button-next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="carousel-dots" aria-label="Seleccionar imagen">
+              <button class="carousel-dot is-active" type="button" aria-label="Ver imagen 1" aria-current="true" data-carousel-dot="0"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+              <button class="carousel-dot" type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Medición y Validación de Enlaces</h3>
+            <p>Medición de pérdidas mediante OTDR y Powermeter, con validación del rendimiento de enlaces ópticos instalados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES DESTACADOS -->
+  <section class="clients-highlight">
+    <div class="container">
+      <div class="clients-highlight-header">
+        <span class="section-subtitle">Empresas que confían en nosotros</span>
+        <h2 class="section-title">Clientes Destacados</h2>
+      </div>
+
+      <div class="clients-marquee" aria-label="Clientes destacados">
+        <div class="clients-track">
+          <div class="client-highlight-card" data-client="Adolis" aria-label="Cliente Adolis">
+            <img src="img/clientes/logo-adolis.png" alt="Adolis" />
+          </div>
+          <div class="client-highlight-card" data-client="Veraelec" aria-label="Cliente Veraelec">
+            <img src="img/clientes/veraelec.png" alt="Veraelec" />
+          </div>
+          <div class="client-highlight-card" data-client="Inia" aria-label="Cliente Inia">
+            <img src="img/clientes/inia-logo.png" alt="Inia" />
+          </div>
+          <div class="client-highlight-card" data-client="Dunamis" aria-label="Cliente Dunamis">
+            <img src="img/clientes/dunamislogo.png" alt="Dunamis" />
+          </div>
+          <div class="client-highlight-card" data-client="Wirex" aria-label="Cliente Wirex">
+            <img src="img/clientes/wirex.png" alt="Wirex" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO Y FOOTER -->
+  <footer id="contacto" class="footer-section">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <img class="footer-logo" src="img/logofull.png" alt="BERTEL Fibra Óptica">
+        <p>instalación y mantenimiento de redes de fibra óptica.</p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <i data-lucide="phone"></i>
+            <span>+56 9 3737 6663</span>
+          </div>
+          <div class="contact-item">
+            <i data-lucide="mail"></i>
+            <span>berteltelecomunicaciones@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i data-lucide="map-pin"></i>
+            <span>Chillán, Chile</span>
+          </div>
+        </div>
+        <a class="btn btn-whatsapp" href="https://wa.me/56937376663?text=Hola%2C%20quiero%20consultar%20por%20sus%20servicios%20de%20fibra%20%C3%B3ptica." target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.72 0 .6 5.12.6 11.46c0 2.02.53 3.99 1.54 5.72L.5 24l6.98-1.83a11.46 11.46 0 0 0 4.58 1.03h.01c6.33 0 11.46-5.12 11.46-11.46 0-3.06-1.19-5.94-3.33-8.1Zm-8.46 17.63h-.01a9.41 9.41 0 0 1-4.8-1.31l-.34-.2-4.15 1.09 1.11-4.05-.22-.41A9.41 9.41 0 0 1 2.61 11.46a9.46 9.46 0 0 1 18.92 0c0 5.2-4.23 9.43-9.46 9.43Zm5.18-7.06c-.28-.14-1.66-.82-1.91-.91-.25-.1-.43-.14-.61.14-.18.28-.7.91-.86 1.1-.16.19-.32.22-.6.08-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.91-.16-.28-.02-.43.12-.57.12-.13.28-.32.42-.48.14-.16.19-.28.28-.47.1-.19.05-.36-.02-.5-.08-.14-.6-1.45-.82-1.98-.22-.52-.43-.45-.6-.46h-.52c-.18 0-.47.07-.72.36-.25.28-1 .98-1 2.38s1.02 2.76 1.16 2.95c.14.19 2 3.14 4.83 4.4.68.29 1.21.46 1.63.59.68.22 1.29.19 1.77.11.54-.08 1.66-.68 1.9-1.33.24-.65.24-1.21.17-1.33-.06-.12-.21-.18-.49-.32Z"/>
+          </svg>
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+      <div class="footer-faq">
+        <span class="section-subtitle">Preguntas frecuentes</span>
+        <h3>Resolvemos tus dudas técnicas</h3>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>¿En qué zonas prestan servicio?</summary>
+            <p>Atendemos en Chillán, la Región de Ñuble y zonas aledañas para proyectos industriales y comerciales.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Realizan certificaciones de red?</summary>
+            <p>Sí, entregamos informes de certificación con mediciones OTDR y Powermeter.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Atienden emergencias por cortes?</summary>
+            <p>Contamos con soporte técnico y reparación de cortes de fibra para empresas.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container">
+        <p>&copy; 2026 BERTEL Fibra Óptica. Todos los derechos reservados.</p>
+        <a class="admin-access-link" href="index.html"><i data-lucide="arrow-left" aria-hidden="true"></i> Volver al sitio</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cargar iconos -->
+  <script>
+    const clientTrack = document.querySelector('.clients-track');
+    const clientCards = [...document.querySelectorAll('.client-highlight-card')];
+
+    if (clientTrack && clientCards.length) {
+      const originalCards = [...clientCards];
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      originalCards.forEach((card) => {
+        clientTrack.appendChild(card.cloneNode(true));
+      });
+
+      const setWidth = () => {
+        const cards = [...clientTrack.children].slice(0, originalCards.length);
+        const gap = parseFloat(getComputedStyle(clientTrack).gap || '0');
+        return cards.reduce((total, card) => total + card.getBoundingClientRect().width, 0) + gap * Math.max(0, cards.length - 1);
+      };
+
+      let baseSetWidth = setWidth();
+      let offset = 0;
+      let lastTimestamp = 0;
+
+      const tick = (timestamp) => {
+        if (!lastTimestamp) lastTimestamp = timestamp;
+
+        const delta = timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+        const speed = 0.7 * (delta / 16.67);
+
+        offset += speed;
+        if (offset >= baseSetWidth) {
+          offset = 0;
+        }
+
+        clientTrack.style.transform = `translateX(-${offset}px)`;
+        requestAnimationFrame(tick);
+      };
+
+      if (prefersReducedMotion) {
+        clientTrack.style.transform = 'translateX(0px)';
+      } else {
+        clientTrack.style.transition = 'transform 0.1s linear';
+        requestAnimationFrame(tick);
+      }
+
+      window.addEventListener('resize', () => {
+        offset = 0;
+        baseSetWidth = setWidth();
+        clientTrack.style.transform = 'translateX(0px)';
+      });
+    }
+
+    document.querySelectorAll('[data-carousel]').forEach((carousel, index) => {
+      const slides = [...carousel.querySelectorAll('[data-slide]')];
+      const parentDots = carousel.parentElement?.querySelectorAll('[data-carousel-dot]') || [];
+      const directDots = carousel.querySelectorAll('[data-carousel-dot]');
+      const dots = parentDots.length ? parentDots : directDots;
+      const prevButton = carousel.querySelector('[data-carousel-prev]');
+      const nextButton = carousel.querySelector('[data-carousel-next]');
+      const hasAutoplay = index === 0;
+      let currentSlide = 0;
+      let autoplay;
+      let progressTimer;
+
+      if (slides.length && dots.length && slides.length !== dots.length) {
+        console.warn('El carrusel tiene una cantidad distinta de slides y puntos:', {
+          slides: slides.length,
+          dots: dots.length,
+          carousel
+        });
+      }
+
+      const setProgress = (value) => {
+        const clampedValue = Math.max(0, Math.min(100, value));
+        carousel.style.setProperty('--progress', `${clampedValue}%`);
+      };
+
+      const showSlide = (slideIndex) => {
+        if (!slides.length || !dots.length) return;
+
+        currentSlide = (slideIndex + slides.length) % slides.length;
+        setProgress(0);
+
+        slides.forEach((slide, slideIndexValue) => {
+          const isActive = slideIndexValue === currentSlide;
+          slide.classList.toggle('is-active', isActive);
+
+          if (slide.tagName === 'VIDEO') {
+            if (isActive) {
+              slide.currentTime = 0;
+              slide.play().catch(() => {});
+            } else {
+              slide.pause();
+              slide.currentTime = 0;
+            }
+          }
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === currentSlide;
+          dot.classList.toggle('is-active', isActive);
+          dot.toggleAttribute('aria-current', isActive);
+        });
+      };
+
+      if (slides.length !== dots.length) {
+        console.warn('Carrusel desincronizado:', { slides: slides.length, dots: dots.length });
+      }
+
+      const startAutoplay = () => {
+        if (!hasAutoplay || slides.length === 0) return;
+        clearInterval(autoplay);
+        clearInterval(progressTimer);
+
+        let progressValue = 0;
+        setProgress(progressValue);
+
+        progressTimer = setInterval(() => {
+          progressValue += 100 / (10000 / 50);
+          setProgress(progressValue);
+
+          if (progressValue >= 100) {
+            showSlide(currentSlide + 1);
+            progressValue = 0;
+            setProgress(progressValue);
+          }
+        }, 50);
+      };
+
+      const stopAutoplay = () => {
+        clearInterval(autoplay);
+        clearInterval(progressTimer);
+      };
+
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          showSlide(currentSlide - 1);
+          if (hasAutoplay) startAutoplay();
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          showSlide(currentSlide + 1);
+          if (hasAutoplay) startAutoplay();
+        });
+      }
+
+      dots.forEach((dot) => dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.carouselDot));
+        if (hasAutoplay) startAutoplay();
+      }));
+
+      if (hasAutoplay) {
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+      } else {
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(autoplay);
+          clearInterval(progressTimer);
+        });
+        carousel.addEventListener('mouseleave', () => {
+          clearInterval(autoplay);
+          clearInterval(progressTimer);
+        });
+      }
+
+      carousel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') showSlide(currentSlide - 1);
+        if (event.key === 'ArrowRight') showSlide(currentSlide + 1);
+        if (hasAutoplay) startAutoplay();
+      });
+
+      if (hasAutoplay) startAutoplay();
+    });
+
+    lucide.createIcons();
+
+    // MENÚ MÓVIL (HAMBURGUESA)
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+      const closeMenu = () => {
+        navMenu.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      };
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+
+      // Cerrar al hacer click en un link
+      navMenu.querySelectorAll('.nav-link').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+    }
+  </script>
+  <dialog class="admin-project-dialog" id="adminProjectDialog" aria-labelledby="adminDialogTitle">
+    <form class="admin-editor" id="adminProjectForm">
+      <button class="admin-dialog-close" id="adminDialogClose" type="button" aria-label="Cerrar formulario">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+      <span class="section-subtitle">Portafolio BERTEL</span>
+      <h2 id="adminDialogTitle">Agregar Nuevo Proyecto</h2>
+      <div class="admin-form-grid">
+        <div class="admin-field">
+          <label for="adminCategory">Servicio relacionado</label>
+          <select id="adminCategory" name="categoria" required>
+            <option value="instalacion">Instalación de Fibra Óptica</option>
+            <option value="fusion">Fusión y Certificación</option>
+            <option value="mantenimiento">Mantenimiento y Reparación</option>
+            <option value="cableado">Cableado Estructurado</option>
+            <option value="lauchado">Lauchado de Ductos</option>
+          </select>
+        </div>
+        <div class="admin-field">
+          <label for="adminBadge">Categoría visible</label>
+          <input id="adminBadge" name="etiqueta" type="text" maxlength="100" placeholder="Ej.: Fusión de Precisión" required>
+        </div>
+        <div class="admin-field admin-field-full">
+          <label for="adminTitle">Título del proyecto</label>
+          <input id="adminTitle" name="titulo" type="text" maxlength="160" required>
+        </div>
+        <div class="admin-field admin-field-full">
+          <label for="adminDescription">Descripción</label>
+          <textarea id="adminDescription" name="descripcion" maxlength="1000" rows="4" required></textarea>
+        </div>
+        <div class="admin-field admin-field-full">
+          <label for="adminFile">Imágenes y videos del carrusel</label>
+          <input id="adminFile" name="files" type="file" accept="image/*,video/*" multiple>
+          <span class="admin-field-hint" id="adminFileHint">Selecciona uno o más archivos para crear el carrusel del proyecto.</span>
+        </div>
+      </div>
+      <div class="admin-upload-progress" id="adminUploadProgress" hidden>
+        <label for="adminProgressBar" id="adminProgressLabel">Subiendo archivos a Supabase Storage...</label>
+        <progress id="adminProgressBar" max="100" value="0"></progress>
+      </div>
+      <p class="admin-notice" id="formNotice" role="status" aria-live="polite" hidden></p>
+      <div class="admin-form-actions">
+        <button class="admin-button" id="adminSaveButton" type="submit">
+          <i data-lucide="upload-cloud" aria-hidden="true"></i> Guardar proyecto
+        </button>
+        <button class="admin-button admin-button-secondary" id="adminCancelButton" type="button">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+  </div>
+</body>
+</html>

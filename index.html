@@ -31,6 +31,7 @@
 
   <!-- Hoja de Estilos CSS -->
   <link rel="stylesheet" href="styles.css">
+  <script src="proyectos.js" defer></script>
 </head>
 <body>
 
@@ -150,7 +151,7 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <a class="service-card" href="servicio-detalle.html?servicio=instalacion" aria-label="Ver Instalación de Fibra Óptica">
           <div class="service-image">
             <img src="img/ins.jpg" alt="Instalación de conexiones de fibra óptica">
           </div>
@@ -158,11 +159,11 @@
             <div class="service-icon"><i data-lucide="cable"></i></div>
             <h3>Instalación de Fibra Óptica</h3>
             <p>Tendido aéreo, subterráneo e interior. Despliegue de redes backbone y distribución con máxima eficiencia técnica.</p>
-            <a class="btn-service-more" href="servicio-instalacion.html">Saber más <span aria-hidden="true">→</span></a>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
           </div>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card" href="servicio-detalle.html?servicio=fusion" aria-label="Ver Fusión y Certificación">
           <div class="service-image">
             <img src="img/fusion.png" alt="Organización de fibras ópticas para certificación">
           </div>
@@ -170,11 +171,11 @@
             <div class="service-icon"><i data-lucide="activity"></i></div>
             <h3>Fusión y Certificación</h3>
             <p>Empalmes por fusión de alta precisión y medición OTDR / Powermeter para garantizar la mínima atenuación.</p>
-            <a class="btn-service-more" href="servicio-fusion.html">Saber más <span aria-hidden="true">→</span></a>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
           </div>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card" href="servicio-detalle.html?servicio=mantenimiento" aria-label="Ver Mantenimiento y Reparación">
           <div class="service-image">
             <img src="img/repara.jpg" alt="Bandeja de fibra óptica en mantenimiento técnico">
           </div>
@@ -182,11 +183,11 @@
             <div class="service-icon"><i data-lucide="shield-check"></i></div>
             <h3>Mantenimiento y Reparación</h3>
             <p>Diagnóstico rápido de fallas, reparación de cortes de fibra y planes de mantenimiento preventivo y correctivo.</p>
-            <a class="btn-service-more" href="servicio-mantenimiento.html">Saber más <span aria-hidden="true">→</span></a>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
           </div>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card" href="servicio-detalle.html?servicio=cableado" aria-label="Ver Cableado Estructurado">
           <div class="service-image">
             <img src="img/cableado.jpg" alt="Organización de cableado de fibra óptica">
           </div>
@@ -194,11 +195,11 @@
             <div class="service-icon"><i data-lucide="server"></i></div>
             <h3>Cableado Estructurado</h3>
             <p>Organización, peinado y canalización de Racks, gabinetes de comunicación y patch panels.</p>
-            <a class="btn-service-more" href="servicio-cableado.html">Saber más <span aria-hidden="true">→</span></a>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
           </div>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a class="service-card" href="servicio-detalle.html?servicio=lauchado" aria-label="Ver Lauchado de Ductos">
           <div class="service-image">
             <img src="fotos/lauchado1.jpeg" alt="Tendido y lanzamiento de ductos para fibra óptica">
           </div>
@@ -206,9 +207,9 @@
             <div class="service-icon"><i data-lucide="route"></i></div>
             <h3>Lauchado de Ductos</h3>
             <p>Instalación y recorrido de ductos para redes subterráneas, cajas de registro y preparación de trazado.</p>
-            <a class="btn-service-more" href="servicio-detalle.html?servicio=lauchado">Saber más <span aria-hidden="true">→</span></a>
+            <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -225,7 +226,8 @@
         </div>
       </div>
 
-      <div class="projects-grid">
+      <p class="projects-status" id="projectsStatus" role="status" aria-live="polite" hidden></p>
+      <div class="projects-grid" id="projectsGrid">
         <!-- ===== CARRUSEL 1: FUSIÓN Y BANDEJAS ===== -->
         <div class="project-card">
           <div class="project-carousel" data-carousel aria-label="Imágenes de empalme y organización de bandejas" tabindex="0">
@@ -477,6 +479,7 @@
     <div class="copyright">
       <div class="container">
         <p>&copy; 2026 BERTEL Fibra Óptica. Todos los derechos reservados.</p>
+        <a class="admin-access-link" href="admin.html"><i data-lucide="lock-keyhole" aria-hidden="true"></i> Acceso Administración</a>
       </div>
     </div>
   </footer>
