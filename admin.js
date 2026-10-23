@@ -324,6 +324,7 @@ const showWorkspace = () => {
   adminSite.hidden = false;
   ensureCreateProjectSlot();
   showNotice(projectStatus, 'Cargando proyectos publicados...');
+  window.dispatchEvent(new Event('bertel-admin-visible'));
   window.scrollTo(0, 0);
   if (window.lucide) lucide.createIcons();
 };

@@ -180,13 +180,17 @@
         </div>
       </div>
 
-      <div class="services-grid">
+      <div class="services-carousel" role="region" aria-label="Carrusel de servicios">
+        <div class="services-carousel-viewport" id="servicesCarousel" tabindex="0">
+          <div class="services-grid" id="servicesTrack">
         <a class="service-card" href="servicio-detalle.html?servicio=instalacion" aria-label="Ver Instalación de Fibra Óptica">
-          <div class="service-image">
-            <img src="img/ins.jpg" alt="Instalación de conexiones de fibra óptica">
+          <div class="card-media">
+            <video autoplay muted loop playsinline poster="img/ins.jpg" class="card-video">
+              <source src="img/servicio1.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
           </div>
           <div class="service-card-content">
-            <div class="service-icon"><i data-lucide="cable"></i></div>
             <h3>Instalación de Fibra Óptica</h3>
             <p>Tendido aéreo, subterráneo e interior. Despliegue de redes backbone y distribución con máxima eficiencia técnica.</p>
             <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
@@ -194,11 +198,13 @@
         </a>
 
         <a class="service-card" href="servicio-detalle.html?servicio=fusion" aria-label="Ver Fusión y Certificación">
-          <div class="service-image">
-            <img src="img/fusion.png" alt="Organización de fibras ópticas para certificación">
+          <div class="card-media">
+            <video autoplay muted loop playsinline poster="img/fusion.png" class="card-video">
+              <source src="img/servicio2.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
           </div>
           <div class="service-card-content">
-            <div class="service-icon"><i data-lucide="activity"></i></div>
             <h3>Fusión y Certificación</h3>
             <p>Empalmes por fusión de alta precisión y medición OTDR / Powermeter para garantizar la mínima atenuación.</p>
             <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
@@ -206,11 +212,13 @@
         </a>
 
         <a class="service-card" href="servicio-detalle.html?servicio=mantenimiento" aria-label="Ver Mantenimiento y Reparación">
-          <div class="service-image">
-            <img src="img/repara.jpg" alt="Bandeja de fibra óptica en mantenimiento técnico">
+          <div class="card-media">
+            <video autoplay muted loop playsinline poster="img/repara.jpg" class="card-video">
+              <source src="img/servicio3.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
           </div>
           <div class="service-card-content">
-            <div class="service-icon"><i data-lucide="shield-check"></i></div>
             <h3>Mantenimiento y Reparación</h3>
             <p>Diagnóstico rápido de fallas, reparación de cortes de fibra y planes de mantenimiento preventivo y correctivo.</p>
             <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
@@ -218,11 +226,13 @@
         </a>
 
         <a class="service-card" href="servicio-detalle.html?servicio=cableado" aria-label="Ver Cableado Estructurado">
-          <div class="service-image">
-            <img src="img/cableado.jpg" alt="Organización de cableado de fibra óptica">
+          <div class="card-media">
+            <video autoplay muted loop playsinline poster="img/cableado.jpg" class="card-video">
+              <source src="img/servicio4.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
           </div>
           <div class="service-card-content">
-            <div class="service-icon"><i data-lucide="server"></i></div>
             <h3>Cableado Estructurado</h3>
             <p>Organización, peinado y canalización de Racks, gabinetes de comunicación y patch panels.</p>
             <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
@@ -230,16 +240,33 @@
         </a>
 
         <a class="service-card" href="servicio-detalle.html?servicio=lauchado" aria-label="Ver Lauchado de Ductos">
-          <div class="service-image">
-            <img src="fotos/lauchado1.jpeg" alt="Tendido y lanzamiento de ductos para fibra óptica">
+          <div class="card-media">
+            <video autoplay muted loop playsinline poster="fotos/lauchado1.jpeg" class="card-video">
+              <source src="fotos/lauchadovideo.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
           </div>
           <div class="service-card-content">
-            <div class="service-icon"><i data-lucide="route"></i></div>
             <h3>Lauchado de Ductos</h3>
             <p>Instalación y recorrido de ductos para redes subterráneas, cajas de registro y preparación de trazado.</p>
             <span class="btn-service-more">Saber más <span aria-hidden="true">→</span></span>
           </div>
         </a>
+          </div>
+        </div>
+        <button class="services-carousel-button services-carousel-prev" type="button" aria-label="Servicio anterior" data-services-prev>
+          <i data-lucide="chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="services-carousel-button services-carousel-next" type="button" aria-label="Siguiente servicio" data-services-next>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="services-carousel-dots" role="group" aria-label="Seleccionar servicio">
+          <button class="services-carousel-dot is-active" type="button" aria-label="Ver Instalación de Fibra Óptica" aria-current="true" data-service-dot="0"></button>
+          <button class="services-carousel-dot" type="button" aria-label="Ver Fusión y Certificación" data-service-dot="1"></button>
+          <button class="services-carousel-dot" type="button" aria-label="Ver Mantenimiento y Reparación" data-service-dot="2"></button>
+          <button class="services-carousel-dot" type="button" aria-label="Ver Cableado Estructurado" data-service-dot="3"></button>
+          <button class="services-carousel-dot" type="button" aria-label="Ver Lauchado de Ductos" data-service-dot="4"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -690,6 +717,62 @@
 
       if (hasAutoplay) startAutoplay();
     });
+
+    const servicesViewport = document.getElementById('servicesCarousel');
+    const servicesTrack = document.getElementById('servicesTrack');
+    const servicesCarousel = servicesViewport?.closest('.services-carousel');
+
+    if (servicesViewport && servicesTrack && servicesCarousel) {
+      const serviceCards = [...servicesTrack.querySelectorAll('.service-card')];
+      const serviceDots = [...document.querySelectorAll('[data-service-dot]')];
+      let activeServiceIndex = 0;
+
+      const showService = (requestedIndex) => {
+        servicesCarousel.style.width = `${document.documentElement.clientWidth}px`;
+        activeServiceIndex = (requestedIndex + serviceCards.length) % serviceCards.length;
+        const activeCard = serviceCards[activeServiceIndex];
+        const cardWidth = activeCard.offsetWidth;
+        const sidePadding = Math.max(0, (servicesViewport.clientWidth - cardWidth) / 2);
+        servicesTrack.style.paddingInline = `${sidePadding}px`;
+        const offset = activeCard.offsetLeft + cardWidth / 2 - servicesViewport.clientWidth / 2;
+        servicesTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+
+        serviceCards.forEach((card, index) => {
+          const active = index === activeServiceIndex;
+          card.classList.toggle('is-active', active);
+          card.toggleAttribute('aria-current', active);
+        });
+        serviceDots.forEach((dot, index) => {
+          const active = index === activeServiceIndex;
+          dot.classList.toggle('is-active', active);
+          dot.toggleAttribute('aria-current', active);
+        });
+      };
+
+      document.querySelector('[data-services-prev]').addEventListener('click', () => {
+        showService(activeServiceIndex - 1);
+      });
+      document.querySelector('[data-services-next]').addEventListener('click', () => {
+        showService(activeServiceIndex + 1);
+      });
+      serviceDots.forEach((dot) => {
+        dot.addEventListener('click', () => showService(Number(dot.dataset.serviceDot)));
+      });
+      servicesViewport.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showService(activeServiceIndex - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showService(activeServiceIndex + 1);
+        }
+      });
+
+      window.addEventListener('resize', () => showService(activeServiceIndex));
+      window.addEventListener('bertel-admin-visible', () => showService(activeServiceIndex));
+      showService(activeServiceIndex);
+    }
 
     lucide.createIcons();
 
