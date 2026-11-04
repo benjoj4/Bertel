@@ -604,6 +604,18 @@ body {
   font-weight: 800;
 }
 
+.about-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 4px;
+}
+
+.about-more-link svg {
+  width: 17px;
+  height: 17px;
+}
+
 .about-visual {
   display: flex;
   flex-direction: column;
@@ -2912,5 +2924,344 @@ body {
 
   .admin-create-project {
     min-height: 220px;
+  }
+}
+
+/* Página independiente Nosotros: comparte tokens y componentes globales. */
+.company-page {
+  color: var(--text-light);
+  background: #080f1c;
+}
+
+.company-page main {
+  overflow: hidden;
+}
+
+.company-hero {
+  position: relative;
+  display: flex;
+  min-height: 640px;
+  align-items: center;
+  overflow: hidden;
+  padding: 150px 0 110px;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.32);
+  background:
+    linear-gradient(90deg, rgba(7, 14, 27, 0.96) 0%, rgba(7, 14, 27, 0.8) 52%, rgba(7, 14, 27, 0.38) 100%),
+    linear-gradient(0deg, rgba(7, 14, 27, 0.72), transparent 55%),
+    url('fotos/bannertrabajos.jpeg') center 48% / cover no-repeat;
+}
+
+.company-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.company-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.company-hero .btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.company-hero h1 {
+  max-width: 840px;
+  color: #f8fafc;
+  font-family: var(--font-title);
+  font-size: clamp(38px, 5.3vw, 68px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.12;
+}
+
+.company-hero h1 span,
+.company-events h2 span {
+  color: var(--primary);
+}
+
+.company-hero-content > p {
+  max-width: 640px;
+  margin: 24px 0 30px;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.company-hero .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-section {
+  padding: 100px 0;
+}
+
+.company-events .company-kicker {
+  margin-bottom: 15px;
+}
+
+.company-events h2 {
+  color: #f8fafc;
+  font-family: var(--font-title);
+  font-size: clamp(30px, 3.7vw, 46px);
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.company-events {
+  background: #080f1c;
+}
+
+.company-events-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: end;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.company-events-heading > p {
+  max-width: 510px;
+  justify-self: end;
+  color: #a9b5c5;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.company-expo-carousel {
+  max-width: 980px;
+  margin: 0 auto;
+  outline: none;
+}
+
+.company-expo-carousel:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 6px;
+}
+
+.company-expo-viewport {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: #050a12;
+}
+
+.company-expo-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.company-expo-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  background: #0c1523;
+}
+
+.company-expo-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(280px, 54vw, 560px);
+  aspect-ratio: auto;
+  overflow: hidden;
+  background: #050a12;
+  cursor: zoom-in;
+}
+
+.company-expo-image-portrait {
+  isolation: isolate;
+}
+
+.company-expo-image-portrait::before {
+  position: absolute;
+  z-index: 0;
+  inset: -18px;
+  background: url('img/expo.jpeg') center 48% / cover no-repeat;
+  content: "";
+  filter: blur(18px) brightness(0.42) saturate(0.8);
+}
+
+.company-expo-image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.company-expo-image:hover img,
+.company-expo-image:focus-visible img {
+  transform: scale(1.025);
+}
+
+.company-expo-image:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -3px;
+}
+
+.company-expo-slide > p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 12px 20px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.company-expo-slide > p span {
+  padding-right: 12px;
+  border-right: 1px solid rgba(148, 163, 184, 0.25);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.company-expo-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.company-expo-arrow {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(0, 229, 255, 0.34);
+  background: rgba(0, 229, 255, 0.06);
+  color: var(--primary);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.company-expo-arrow:hover,
+.company-expo-arrow:focus-visible {
+  background: var(--primary);
+  color: var(--bg-dark);
+}
+
+.company-expo-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.company-expo-pagination {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.company-expo-pagination button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #536174;
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.company-expo-pagination button[aria-current="true"] {
+  width: 24px;
+  border-radius: 5px;
+  background: var(--primary);
+}
+
+.company-expo-pagination button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.company-expo-count {
+  min-width: 48px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .company-hero {
+    min-height: 580px;
+  }
+
+  .company-events-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .company-events-heading > p {
+    justify-self: start;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .company-hero {
+    min-height: 590px;
+    padding: 130px 0 100px;
+    background-position: 58% center;
+  }
+
+  .company-hero h1 {
+    font-size: clamp(36px, 10vw, 50px);
+    letter-spacing: -1.4px;
+  }
+
+  .company-hero-content > p {
+    font-size: 16px;
+  }
+
+  .company-section {
+    padding: 72px 0;
+  }
+
+  .company-expo-image {
+    height: min(112vw, 460px);
+  }
+
+  .company-expo-slide > p {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    padding: 14px 16px;
+  }
+
+  .company-expo-slide > p span {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .company-expo-controls {
+    gap: 14px;
+    margin-top: 17px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .company-expo-track,
+  .company-expo-image img,
+  .company-expo-arrow,
+  .company-expo-pagination button {
+    transition: none;
   }
 }
