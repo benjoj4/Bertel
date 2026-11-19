@@ -180,7 +180,7 @@
         specs: [['Equipamiento', 'Herramientas de terminación y prueba según proyecto'], ['Cableado', 'Cobre categoría definida en el diseño y fibra óptica'], ['Conectores', 'RJ45, patch panels y conectores ópticos según red'], ['Plazo de respuesta', 'Coordinado según alcance y disponibilidad'], ['Cobertura', 'Chillán, Ñuble y zonas aledañas']],
       },
       lauchado: {
-        title: 'Lauchado de Ductos', badge: 'Tendido subterráneo y preparación de ruta', image: 'fotos/lauchado1.jpeg',
+        title: 'Lauchado de Ductos', badge: 'Tendido subterráneo y preparación de ruta', image: 'fotos/lauchado-stock-trazado.jpg',
         subtitle: 'Instalación de ductos para redes subterráneas, trazado de recorrido y preparación de registros para fibra óptica.',
         description: [
           'Efectuamos la instalación y recorrido de ductos para proyectos subterráneos que requieren una ruta ordenada, segura y compatible con la red de fibra óptica. El trabajo incluye la preparación de registros, coordinación del trazado y control del paso de conductos según el diseño de la infraestructura.',
@@ -281,6 +281,19 @@
       return button;
     };
     const loadServiceCards = async () => {
+      if (serviceKey === 'lauchado') {
+        const referenceCards = [
+          { titulo: 'Ductos instalados en una zanja (imagen referencial)', imagen_url: 'fotos/lauchado-stock-ductos.jpg' },
+          { titulo: 'Tuberías y registro de servicios subterráneos (imagen referencial)', imagen_url: 'fotos/lauchado-stock-registros.jpg' },
+          { titulo: 'Preparación de una zanja para canalización (imagen referencial)', imagen_url: 'fotos/lauchado-stock-excavacion.jpg' },
+          { titulo: 'Trazado de cables junto a una zanja de servicio (imagen referencial)', imagen_url: 'fotos/lauchado-stock-trazado.jpg' }
+        ];
+        serviceGallery.replaceChildren(...referenceCards.map(renderServiceCard).filter(Boolean));
+        galleryStatus.textContent = 'Imágenes referenciales de canalizaciones subterráneas.';
+        serviceGallery.setAttribute('aria-busy', 'false');
+        return;
+      }
+
       const endpoint = new URL(`${SUPABASE_URL}/rest/v1/tarjetas`);
       endpoint.searchParams.set('select', '*');
       endpoint.searchParams.set('categoria', `eq.${serviceKey}`);

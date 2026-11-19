@@ -462,7 +462,8 @@ body {
 }
 
 .client-highlight-card[data-client="Adolis"],
-.client-highlight-card[data-client="Veraelec"] {
+.client-highlight-card[data-client="Veraelec"],
+.client-highlight-card[data-client="Dunamis"] {
   background-color: #f8fafc;
   border-color: #cbd5e1;
 }
@@ -483,6 +484,11 @@ body {
 .client-highlight-card[data-client="Wirex"] img {
   max-width: 210px;
   max-height: 80px;
+}
+
+.client-highlight-card[data-client="Dunamis"] img {
+  max-width: 100px;
+  max-height: 82px;
 }
 
 @media (max-width: 640px) {
